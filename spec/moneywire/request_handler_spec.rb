@@ -30,7 +30,6 @@ describe Moneywire::RequestHandler do
             query: { name: 'john' },
             headers: {
               'X-Auth-Token' => 'token_string',
-              'Content-Type' => 'application/json',
               'User-Agent' => 'in_a_rest'
             }
           )

@@ -5,7 +5,6 @@ module Moneywire
   class RequestHandler
     include HTTParty
     debug_output $stdout
-    headers 'Content-Type' => 'application/json'
 
     attr_reader :login_id, :api_key, :token, :token_renewed_block, :response_received_block
 
@@ -58,7 +57,9 @@ module Moneywire
     def perform_request(method, uri, options)
       retry_auth = options[:retry_auth].nil? ? true : options.delete(:retry_auth)
       options[:headers] ||= {}
-
+      if [:post, :put].include?(method)
+        options[:headers].merge!('Content-Type' => 'application/json')
+      end
       response = retry_authentication(method, uri, options, retry_auth)
 
       ResponseHandler.new(response).parse
