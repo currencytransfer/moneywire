@@ -1,4 +1,8 @@
 require 'moneywire/request_handler'
+require 'moneywire/resources/base_resource'
+Dir[File.expand_path('../resources/*.rb', __FILE__)].each do |file|
+  require file
+end
 
 module Moneywire
   class Client
