@@ -1,0 +1,40 @@
+inherit_from:
+  - .rubocop_enabled.yml
+  - .rubocop_disabled.yml
+
+# Common configuration.
+AllCops:
+  Exclude:
+    - 'tcc.gemspec'
+  RunRailsCops: false
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
+
+# Indentation of `when`.
+Style/CaseIndentation:
+  IndentWhenRelativeTo: case
+  SupportedStyles:
+    - case
+    - end
+  IndentOneStep: true
+
+##################### Metrics ##################################
+
+Metrics/LineLength:
+  Max: 100
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Metrics/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 20
+
+Metrics/ParameterLists:
+  Max: 5
+  CountKeywordArgs: false
