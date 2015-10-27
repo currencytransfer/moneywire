@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000}'
+    headers:
+      X-Auth-Token:
+      - FhA7ddYdtMLx73RK6y5S12PiYWoOr3M91Hg7nacY6ZPAn
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '349'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 27 Oct 2015 16:05:56 GMT
+      X-Amzn-Requestid:
+      - 9b49d6d3-7cc4-11e5-84d8-554e12feea56
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1415e6a9d308119037d1fa89386da72a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - oa8jAn940zRUzrGxtyOcT1IKb_2YaPV7V5DX63Onp_gqIOePmMQaag==
+    body:
+      encoding: UTF-8
+      string: '{"sellAmount":15000.00,"buyAmount":10785.75,"commission":37.5000,"transferFee":0.000000,"markedUpAmount":10785.75,"sellCurrency":"EUR","buyCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","interbankRate":0.72155,"clientRate":0.71975,"markedUpRate":0.71905,"quoteTime":"2015-10-27T16:05:56.720Z","settlementDate":"2015-10-27","stale":false}'
+    http_version: 
+  recorded_at: Tue, 27 Oct 2015 16:05:56 GMT
+recorded_with: VCR 2.9.3

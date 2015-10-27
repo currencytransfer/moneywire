@@ -3,7 +3,7 @@ require 'spec_helper'
 class TestResource < Moneywire::Resources::BaseResource
   use_resource 'test'
 
-  allow_actions :retrieve, :find, :update
+  allow_actions :retrieve, :find, :update, :create
 end
 
 describe Moneywire::Resources::BaseResource do
@@ -79,6 +79,16 @@ describe Moneywire::Resources::BaseResource do
         )
 
         test_resource.update('some_id', arg: 1, arg2: 'another')
+      end
+    end
+
+    context 'create' do
+      it 'delegates the request to the request_handler' do
+        expect(request_handler).to(
+          receive(:post).with('test/', { arg: 1, arg2: 'another' }, {})
+        )
+
+        test_resource.create(arg: 1, arg2: 'another')
       end
     end
   end

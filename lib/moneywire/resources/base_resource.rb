@@ -48,6 +48,10 @@ module Moneywire
       def perform_update(id, **optional)
         post(id.to_s, optional)
       end
+
+      def perform_create(**optional)
+        post('', optional)
+      end
     end
   end
 end

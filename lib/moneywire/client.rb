@@ -15,5 +15,9 @@ module Moneywire
       @request_handler = RequestHandler.new(login_id, api_key, token, environment)
       request_handler.authenticate if token.nil?
     end
+
+    def quotes
+      @quotes ||= Resources::Quotes.new(request_handler)
+    end
   end
 end
