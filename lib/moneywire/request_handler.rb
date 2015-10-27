@@ -1,0 +1,93 @@
+require 'httparty'
+require 'moneywire/response_handler'
+
+module Moneywire
+  class RequestHandler
+    include HTTParty
+    debug_output $stdout
+    headers 'Content-Type' => 'application/json'
+
+    attr_reader :login_id, :api_key, :token, :token_renewed_block, :response_received_block
+
+    def initialize(login_id, api_key, token, environment = nil)
+      @login_id = login_id
+      @api_key = api_key
+      @token = token
+      @environment = environment || Moneywire.environment
+    end
+
+    # Set a callback that will be called whenever a new token is generated
+    # the block will receive the newly generated token as argument
+    # e.g:
+    #   handler.on_token_renewed do |new_token|
+    #     # do something with the new token
+    #   end
+    def on_token_renewed(&block)
+      @token_renewed_block = block
+    end
+
+    # Set a callback that will be called whenever an API response is received
+    # the block will receive Httparty response object and is_successful as arguments
+    # e.g:
+    #   handler.on_response_received do |response, is_successful|
+    #     # log the response somewhere
+    #   end
+    def on_response_received(&block)
+      @response_received_block = block
+    end
+
+    def get(uri, params = {}, options = {})
+      options.merge!(query: params)
+      perform_request(:get, uri, options)
+    end
+
+    def post(uri, params = {}, options = {})
+      options.merge!(body: params.to_json)
+      perform_request(:post, uri, options)
+    end
+
+    def authenticate
+      params = { emailAddress: login_id, apiKey: api_key }
+      @token = post('auth/api-login', params, retry_auth: false)['authToken']
+      token_renewed_block.call(token) if token_renewed_block
+      token
+    end
+
+    private
+
+    def perform_request(method, uri, options)
+      retry_auth = options[:retry_auth].nil? ? true : options.delete(:retry_auth)
+      options[:headers] ||= {}
+
+      response = retry_authentication(method, uri, options, retry_auth)
+
+      ResponseHandler.new(response).parse
+    end
+
+    def auth_headers
+      headers = self.class.headers
+      headers['X-Auth-Token'] = token if token
+      headers
+    end
+
+    def retry_authentication(method, uri, options, retry_auth)
+      2.times do
+        options[:headers].merge!(auth_headers)
+        response = self.class.send(method, full_uri(uri), options)
+        call_response_received_block(response)
+
+        return response if response.code != 401 || !retry_auth
+        authenticate
+      end
+    end
+
+    def call_response_received_block(response)
+      return unless response_received_block
+      response_received_block.call(response, ResponseHandler.new(response).successful?)
+    end
+
+    def full_uri(uri)
+      Moneywire.base_uri_for(@environment) + uri
+    end
+  end
+end

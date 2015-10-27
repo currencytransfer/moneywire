@@ -19,6 +19,7 @@ require 'vcr'
 
 require File.expand_path('../support/config', __FILE__)
 
+Moneywire.environment = :demo
 SpecConfig.load
 
 VCR.configure do |config|
