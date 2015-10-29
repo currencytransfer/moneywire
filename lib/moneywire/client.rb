@@ -19,5 +19,9 @@ module Moneywire
     def quotes
       @quotes ||= Resources::Quotes.new(request_handler)
     end
+
+    def conversions
+      @conversions ||= Resources::Conversions.new(request_handler)
+    end
   end
 end

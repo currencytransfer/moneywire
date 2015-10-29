@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/conversions/?buyCurrency=EUR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - ma0oHFCS1aCtCoZXuSh1pmFrycW4hKqkRN9B40zSZcM9f
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3128'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 29 Oct 2015 12:06:14 GMT
+      X-Amzn-Requestid:
+      - 735e3b54-7e35-11e5-ac8e-21b8771121db
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 18f003e42aa51348bf6b113c3a47240e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - vV3YpN27Uwk_hEzbFv7kLN4nJJSXYCyLNy_75sbDw_BMaHp5ppVVtw==
+    body:
+      encoding: UTF-8
+      string: '{"results":11,"page":1,"conversions":[{"id":57,"settlementDate":"2015-10-14T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":1000.00,"sellAmount":1137.94,"interbankRate":0.88100,"createdAt":"2015-10-09T12:04:20.000Z","clientRate":0.88320,"commission":2.50},{"id":58,"settlementDate":"2015-10-14T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11395.93,"interbankRate":0.87970,"createdAt":"2015-10-12T16:23:45.000Z","clientRate":0.88190,"commission":25.00},{"id":59,"settlementDate":"2015-10-14T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11394.89,"interbankRate":0.87980,"createdAt":"2015-10-12T16:24:15.000Z","clientRate":0.88200,"commission":25.00},{"id":61,"settlementDate":"2015-10-27T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11051.58,"interbankRate":0.90710,"createdAt":"2015-10-26T12:19:17.000Z","clientRate":0.90937,"commission":25.00},{"id":62,"settlementDate":"2015-10-27T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11051.58,"interbankRate":0.90710,"createdAt":"2015-10-26T12:19:31.000Z","clientRate":0.90937,"commission":25.00},{"id":63,"settlementDate":"2015-10-27T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.02,"interbankRate":0.90730,"createdAt":"2015-10-26T12:19:58.000Z","clientRate":0.90957,"commission":25.00},{"id":64,"settlementDate":"2015-10-27T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.51,"interbankRate":0.90730,"createdAt":"2015-10-26T12:23:57.000Z","clientRate":0.90957,"commission":25.00},{"id":65,"settlementDate":"2015-10-27T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.51,"interbankRate":0.90730,"createdAt":"2015-10-26T12:25:13.000Z","clientRate":0.90957,"commission":25.00},{"id":72,"settlementDate":"2015-10-29T14:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":1.39180,"createdAt":"2015-10-29T12:00:04.000Z","clientRate":1.39528,"commission":37.50},{"id":73,"settlementDate":"2015-10-29T14:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":1.39160,"createdAt":"2015-10-29T12:01:04.000Z","clientRate":1.39508,"commission":37.50}]}'
+    http_version: 
+  recorded_at: Thu, 29 Oct 2015 12:06:14 GMT
+recorded_with: VCR 2.9.3
