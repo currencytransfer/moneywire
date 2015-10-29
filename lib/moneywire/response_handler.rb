@@ -29,7 +29,7 @@ module Moneywire
           when 404 then NotFoundError.new(
             'Requested resource is not found', response.parsed_response
           )
-          when 500 then InternalApplicationError.new('Something is wrong with TCC server')
+          when 500 then InternalApplicationError.new('Something is wrong with Moneywire server')
         end
       error ? error : UnknownError.new('Unrecognized server response')
     end
