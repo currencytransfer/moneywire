@@ -23,5 +23,9 @@ module Moneywire
     def conversions
       @conversions ||= Resources::Conversions.new(request_handler)
     end
+
+    def reference
+      @reference ||= Resources::Reference.new(request_handler)
+    end
   end
 end

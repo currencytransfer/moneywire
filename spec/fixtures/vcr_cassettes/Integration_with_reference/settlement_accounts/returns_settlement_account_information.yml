@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/USD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - ma0oHFCS1aCtCoZXuSh1pmFrycW4hKqkRN9B40zSZcM9f
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '401'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 30 Oct 2015 12:07:36 GMT
+      X-Amzn-Requestid:
+      - cec8b107-7efe-11e5-9f2f-294c463c4fb4
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 3572de112011f1b625bb77410b0c5cca.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - N5FeHo__dEFNzqPkLSf_1ijKE9f86U75CmYLFr66_WBSHlA4dhNDjQ==
+    body:
+      encoding: UTF-8
+      string: '{"accountType":"settlement","currency":"USD","accountName":"Supercapital
+        Ltd Client Segregated USD","beneficiaryName":"Supercapital Ltd","beneficiaryAddress":"50
+        Liverpool Street, London, EC2M 7PY","beneficiaryCountry":"GB","bankName":"NEMEA
+        Bank","bankCountry":"MT","bicSwift":"NMEAMTMT","iban":"MT48 NMEA 2501 4000
+        0000 0000 0000 151","routingCode":"NMEA 25014","accountNumber":"000000000000000151"}'
+    http_version: 
+  recorded_at: Fri, 30 Oct 2015 12:07:36 GMT
+recorded_with: VCR 2.9.3
