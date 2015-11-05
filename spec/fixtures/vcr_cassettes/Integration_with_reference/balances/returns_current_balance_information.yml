@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/balances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '455'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 05 Nov 2015 15:55:04 GMT
+      X-Amzn-Requestid:
+      - 938e7ea9-83d5-11e5-8961-01990d6b77bc
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 457b75182c63eff39fe8e72b11b6c74d.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - vzW59PAHiMeWn7HX_NeQ9H5tScicenSbyemajZGb9zUxZM0ar35aMw==
+    body:
+      encoding: UTF-8
+      string: '{"balances":[{"currency":"USD","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":204.92,"availableToWithdraw":0.00,"transactionLimit":601815.74},{"currency":"EUR","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":291.98,"availableToWithdraw":0.00,"transactionLimit":554025.36},{"currency":"GBP","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":177.12,"availableToWithdraw":0.00,"transactionLimit":394604.56}]}'
+    http_version: 
+  recorded_at: Thu, 05 Nov 2015 15:55:04 GMT
+recorded_with: VCR 2.9.3

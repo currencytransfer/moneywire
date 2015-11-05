@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/available-currencies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '206'
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 05 Nov 2015 15:29:30 GMT
+      X-Amzn-Requestid:
+      - 021a595d-83d2-11e5-84f7-8d88a7a490ed
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 85f8900a83c840580b24eb9ea67db106.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 5gcO7iB6rRQvXIXj0ilBrWVk9NqyUzePPWi9xrWKse5Xd__issRO5Q==
+    body:
+      encoding: UTF-8
+      string: '{"buyCurrencies":["AUD","CAD","CZK","DKK","JPY","MXN","PLN","RON","SEK","THB","USD","AED","CHF","EUR","GBP","HKD","HUF","ILS","NOK","NZD","SGD","TRY","ZAR","SAR","BGN"],"sellCurrencies":["USD","EUR","GBP"]}'
+    http_version: 
+  recorded_at: Thu, 05 Nov 2015 15:29:30 GMT
+recorded_with: VCR 2.9.3
