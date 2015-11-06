@@ -22,13 +22,34 @@ describe 'Integration with conversions', vcr: true do
         buyCurrency: 'EUR',
         sellCurrency: 'GBP',
         currencyPair: 'EURGBP',
-        settlementDate: '2015-10-30',
+        settlementDate: '2015-11-09',
         fixedSide: :sell,
         amount: 15_000,
         agreesToTerms: true,
-        worstInterbankRate: 1.3951
+        worstInterbankRate: 10
       )
       expect(result).to(include(*expected_response_fields))
+    end
+
+    context 'with invalid arguments' do
+      let(:response) do
+        client.conversions.create(
+          sellCurrency: 'EUR',
+          buyCurrency: 'GBP',
+          currencyPair: 'EURGBP',
+          settlementDate: '2015-11-09',
+          fixedSide: :sell,
+          amount: 15_000,
+          agreesToTerms: true,
+          worstInterbankRate: 1.0
+        )
+      end
+
+      it 'raises BadRequestError for invalid worstInterbankRate' do
+        expect { response }.to(
+          raise_error(Moneywire::BadRequestError)
+        )
+      end
     end
   end
 
@@ -37,6 +58,14 @@ describe 'Integration with conversions', vcr: true do
       expect(client.conversions.retrieve(74)).to(
         include(*expected_response_fields)
       )
+    end
+
+    context 'when the conversion cannot be found' do
+      it 'raises NotFoundError' do
+        expect { client.conversions.retrieve(74_000) }.to(
+          raise_error(Moneywire::NotFoundError)
+        )
+      end
     end
   end
 

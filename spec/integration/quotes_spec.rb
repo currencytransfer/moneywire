@@ -45,7 +45,20 @@ describe 'Integration with quotes', vcr: true do
     end
 
     context 'with invalid arguments' do
-      pending 'raises BadRequestError' do
+      it 'raises BadRequestError for invalid currency pair' do
+        args = {
+          sellCurrency: 'BGN',
+          buyCurrency: 'EUR',
+          fixedSide: :sell,
+          amount: 15_000,
+          settlementDate: '2015-11-09'
+        }
+        expect { client.quotes.create(args) }.to(
+          raise_error(Moneywire::BadRequestError)
+        )
+      end
+
+      it 'raises BadRequestError for invalid amount' do
         args = {
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
@@ -57,7 +70,7 @@ describe 'Integration with quotes', vcr: true do
         )
       end
 
-      pending 'raises an error with information for buy_currency and amount' do
+      it 'raises an error with information for buy_currency and amount' do
         args = {
           sellCurrency: 'EUR',
           buyCurrency: 'invalid-buy',
@@ -66,23 +79,8 @@ describe 'Integration with quotes', vcr: true do
         }
         expect { client.quotes.create(args) }.to(
           raise_error do |error|
-            expect(error.response['error_messages']).to include('buy_currency', 'amount')
-          end
-        )
-      end
-
-      pending 'raises an error with information for base and amount' do
-        args = {
-          sellCurrency: 'EUR',
-          buyCurrency: 'EUR',
-          fixedSide: :sell,
-          amount: 'invalid'
-        }
-
-        expect { client.quotes.create(args) }.to(
-          raise_error do |error|
-            expect(error.response['error_messages']).to include(
-              'base', 'amount'
+            expect(error.response).to(
+              include('code' => 'malformed_request_content', 'errors' => be_an(Array))
             )
           end
         )

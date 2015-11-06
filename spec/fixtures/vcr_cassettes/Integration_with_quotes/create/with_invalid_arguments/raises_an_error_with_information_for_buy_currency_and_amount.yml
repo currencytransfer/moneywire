@@ -8,13 +8,13 @@ http_interactions:
       string: '{"sellCurrency":"EUR","buyCurrency":"invalid-buy","fixedSide":"sell","amount":"invalid"}'
     headers:
       X-Auth-Token:
-      - FhA7ddYdtMLx73RK6y5S12PiYWoOr3M91Hg7nacY6ZPAn
+      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
       Content-Type:
       - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Content-Type:
       - application/json
@@ -23,20 +23,20 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 27 Oct 2015 16:05:57 GMT
+      - Fri, 06 Nov 2015 11:45:20 GMT
       X-Amzn-Requestid:
-      - 9bf8dbd2-7cc4-11e5-a197-192356cde93c
+      - dbbb0a93-847b-11e5-8f2c-655042592d0a
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 761f19bc2f5721b0be0a41147e1e925f.cloudfront.net (CloudFront)
+      - 1.1 b043e5d8f891a4355b301181139be4c3.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ByKrj7LVh3BniRY3THSoP8qQi3pT9fERpHyJCegS629cYJLpWw6Qdw==
+      - fWkzl-nYKxgiSQalAnYkEKxPDnjThXEpn9jg5iy0ubU_UmxqVCEmxQ==
     body:
       encoding: UTF-8
       string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"No
         usable value for amount\nDo not know how to convert JString(invalid) into
         class scala.math.BigDecimal"}]}'
     http_version: 
-  recorded_at: Tue, 27 Oct 2015 16:05:57 GMT
+  recorded_at: Fri, 06 Nov 2015 11:45:20 GMT
 recorded_with: VCR 2.9.3

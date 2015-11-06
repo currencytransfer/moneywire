@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"BGN","buyCurrency":"EUR","fixedSide":"sell","amount":15000,"settlementDate":"2015-11-09"}'
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '140'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 06 Nov 2015 11:51:13 GMT
+      X-Amzn-Requestid:
+      - ae3afabe-847c-11e5-be6a-415124939e7c
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 4cef090fba24867bb1a518bc7c5a1e98.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - "-TrGbTFo0oDcA3BZtzQ05MyFFgN3JzeJwI5j8OM2RmbjtOD539qXOQ=="
+    body:
+      encoding: UTF-8
+      string: '{"code":"currencies_not_tradeable","errors":[{"code":"currencies_not_tradeable","message":"You
+        cannot trade the currencies you provided."}]}'
+    http_version:
+  recorded_at: Fri, 06 Nov 2015 11:51:13 GMT
+recorded_with: VCR 2.9.3

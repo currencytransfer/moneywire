@@ -5,38 +5,38 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/quotes/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"EUR","buyCurrency":"EUR","fixedSide":"sell","amount":"invalid"}'
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":0}'
     headers:
       X-Auth-Token:
-      - FhA7ddYdtMLx73RK6y5S12PiYWoOr3M91Hg7nacY6ZPAn
+      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
       Content-Type:
       - application/json
   response:
     status:
-      code: 200
-      message: OK
+      code: 400
+      message: Bad Request
     headers:
       Content-Type:
       - application/json
       Content-Length:
-      - '201'
+      - '196'
       Connection:
       - keep-alive
       Date:
-      - Tue, 27 Oct 2015 16:05:57 GMT
+      - Fri, 06 Nov 2015 11:49:24 GMT
       X-Amzn-Requestid:
-      - 9c1bf428-7cc4-11e5-9f2f-294c463c4fb4
+      - 6d0cbb42-847c-11e5-be6a-415124939e7c
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
       Via:
-      - 1.1 1f8a17c41295fac39556a328869a62bd.cloudfront.net (CloudFront)
+      - 1.1 50559c7d0445e9bb76ff2818ccaed8a7.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 208jFrdYc_WohLdMbZ7hHFlKL8L4DaGMYwohM5c5JHhuL8aly16xig==
+      - o_1-BDVgEH5xShLd5rXb_3_zpI1rvW_AJhCXy6-Zau2AVtZ-c7UpeQ==
     body:
       encoding: UTF-8
       string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"No
-        usable value for amount\nDo not know how to convert JString(invalid) into
-        class scala.math.BigDecimal"}]}'
+        usable value for settlementDate\nDid not find value which can be converted
+        into java.lang.String"}]}'
     http_version: 
-  recorded_at: Tue, 27 Oct 2015 16:05:58 GMT
+  recorded_at: Fri, 06 Nov 2015 11:49:24 GMT
 recorded_with: VCR 2.9.3

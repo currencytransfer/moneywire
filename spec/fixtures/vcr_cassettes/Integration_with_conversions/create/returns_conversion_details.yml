@@ -5,10 +5,10 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/conversions/
     body:
       encoding: UTF-8
-      string: '{"buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","settlementDate":"2015-10-30","fixedSide":"sell","amount":15000,"agreesToTerms":true,"worstInterbankRate":1.3951}'
+      string: '{"buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","settlementDate":"2015-11-09","fixedSide":"sell","amount":15000,"agreesToTerms":true,"worstInterbankRate":10}'
     headers:
       X-Auth-Token:
-      - ma0oHFCS1aCtCoZXuSh1pmFrycW4hKqkRN9B40zSZcM9f
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
       Content-Type:
       - application/json
   response:
@@ -19,22 +19,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '313'
+      - '310'
       Connection:
       - keep-alive
       Date:
-      - Thu, 29 Oct 2015 12:01:45 GMT
+      - Fri, 06 Nov 2015 12:33:47 GMT
       X-Amzn-Requestid:
-      - d1941494-7e34-11e5-8813-bba0257d828d
+      - 9eb169b9-8482-11e5-ab62-5fa84fb59008
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 16fe698f7d3a8653d7ffa230d2499d2b.cloudfront.net (CloudFront)
+      - 1.1 9e6a829fab539aea0c15afd27fd9d1ad.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - vP-ddV5Thywltg8HwNSn1gUahDG3Q5Mhfo3sAETfyaTOX28fZGU3fQ==
+      - NLArDwTXsXAc6cLwtT14c-_WRxZqXu9vrxB_98iXxGPDtWQZ0q-SgQ==
     body:
       encoding: UTF-8
-      string: '{"id":74,"settlementDate":"2015-10-29T14:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":1.39160,"createdAt":"2015-10-29T12:01:44.000Z","clientRate":1.39508,"commission":37.500000}'
-    http_version: 
-  recorded_at: Thu, 29 Oct 2015 12:01:45 GMT
+      string: '{"id":115,"settlementDate":"2015-11-08T14:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20798.55,"sellAmount":15000.00,"interbankRate":0.71940,"createdAt":"2015-11-06T12:33:46.000Z","clientRate":0.72120,"commission":52.20}'
+    http_version:
+  recorded_at: Fri, 06 Nov 2015 12:33:47 GMT
 recorded_with: VCR 2.9.3
