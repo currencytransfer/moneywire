@@ -7,6 +7,10 @@ module Moneywire
         get('available-currencies')
       end
 
+      def currency_pairs
+        get('currency-pairs')
+      end
+
       def balances
         get('balances')
       end
