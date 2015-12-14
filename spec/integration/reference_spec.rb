@@ -6,10 +6,17 @@ describe 'Integration with reference', vcr: true do
   end
 
   describe 'available_currencies' do
-    it 'returns arrays with sell and buy currencies' do
-      expect(client.reference.available_currencies).to(
-        include('sellCurrencies' => be_an(Array), 'buyCurrencies' => be_an(Array))
+    it 'returns an array with information for the available currencies' do
+      expect(client.reference.available_currencies).to all include(
+        'code', 'name', 'localPaymentAvailable', 'cutOffTime', 'priorityDelivery',
+        'availableBuy', 'availableSell', 'extendedAvailableBuy', 'extendedAvailableSell'
       )
+    end
+  end
+
+  describe 'currency_pairs' do
+    it 'returns an array currency pairs' do
+      expect(client.reference.currency_pairs).to all match(/\A[A-Z]{6}\Z/)
     end
   end
 

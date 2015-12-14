@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/available-currencies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5893'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 14 Dec 2015 16:11:42 GMT
+      X-Amzn-Requestid:
+      - 5d440a4c-a27d-11e5-849e-2937dcee2255
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e13dc20cb35881b25fb296fb0383f55c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - FckRPlqBw9nsgDXvujSM9qd88VhuSsxK2yO3Q8e19rdcmGtnbmwDYw==
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"code":"AUD","name":"Australian Dollar","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":2,"code":"CAD","name":"Canadian
+        Dollar","localPaymentAvailable":true,"cutOffTime":"14:00","priorityDelivery":"Same
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":3,"code":"CZK","name":"Czech
+        Koruna","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":4,"code":"DKK","name":"Danish
+        Krone","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":5,"code":"JPY","name":"Japanese
+        Yen","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":6,"code":"MXN","name":"Mexican
+        Peso","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":7,"code":"PLN","name":"Polish
+        Zloty","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":8,"code":"RON","name":"Romanian
+        New Leu","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":9,"code":"SEK","name":"Swedish
+        Krona","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":10,"code":"THB","name":"Thai
+        Baht","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":11,"code":"USD","name":"United
+        States Dollar","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Same
+        Day","availableBuy":true,"availableSell":true,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":12,"code":"AED","name":"Emirati
+        Dirham","localPaymentAvailable":false,"cutOffTime":"15:30","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":13,"code":"CHF","name":"Swiss
+        Franc","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":14,"code":"EUR","name":"European
+        Euro","localPaymentAvailable":true,"cutOffTime":"14:30","priorityDelivery":"Same
+        Day","availableBuy":true,"availableSell":true,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":15,"code":"GBP","name":"British
+        Pound Sterling","localPaymentAvailable":true,"cutOffTime":"14:00","priorityDelivery":"Same
+        Day","availableBuy":true,"availableSell":true,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":16,"code":"HKD","name":"Hong
+        Kong Dollar","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":17,"code":"HUF","name":"Hungarian
+        Forint","localPaymentAvailable":true,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":18,"code":"ILS","name":"Israeli
+        New Sheqel","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":19,"code":"NOK","name":"Norwegian
+        Krone","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":20,"code":"NZD","name":"New
+        Zealand Dollar","localPaymentAvailable":true,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":21,"code":"SGD","name":"Singapore
+        Dollar","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":22,"code":"TRY","name":"Turkish
+        Lira","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":23,"code":"ZAR","name":"South
+        African Rand","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":24,"code":"SAR","name":"Saudi
+        Riyal","localPaymentAvailable":false,"cutOffTime":"15:30","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":25,"code":"BGN","name":"Bulgarian
+        Lev","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
+        Day","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true},{"id":26,"code":"BHD","name":"Bahraiani
+        Dinar","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Two
+        Days","availableBuy":true,"availableSell":false,"extendedAvailableBuy":true,"extendedAvailableSell":true}]'
+    http_version: 
+  recorded_at: Mon, 14 Dec 2015 16:11:42 GMT
+recorded_with: VCR 2.9.3
