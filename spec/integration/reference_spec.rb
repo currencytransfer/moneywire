@@ -51,8 +51,9 @@ describe 'Integration with reference', vcr: true do
         bicSwift iban routingCode accountNumber
       )
     end
+
     it 'returns settlement account information' do
-      expect(client.reference.settlement_accounts('USD')).to include(*expected_fields)
+      expect(client.reference.settlement_accounts(132)).to include(*expected_fields)
     end
   end
 
