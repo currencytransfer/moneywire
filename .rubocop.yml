@@ -6,7 +6,6 @@ inherit_from:
 AllCops:
   Exclude:
     - 'tcc.gemspec'
-  RunRailsCops: false
 
 Style/MultilineOperationIndentation:
   EnforcedStyle: indented

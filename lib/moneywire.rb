@@ -5,7 +5,7 @@ module Moneywire
   ENVIRONMENTS = {
     production: 'https://public-api.supercapital.uk/v1/',
     demo: 'https://public-demo-api.supercapital.uk/v1/'
-  }
+  }.freeze
 
   class << self
     attr_reader :environment

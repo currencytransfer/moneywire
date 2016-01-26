@@ -36,12 +36,12 @@ module Moneywire
     end
 
     def get(uri, params = {}, options = {})
-      options.merge!(query: params)
+      options[:query] = params
       perform_request(:get, uri, options)
     end
 
     def post(uri, params = {}, options = {})
-      options.merge!(body: params.to_json)
+      options[:body] = params.to_json
       perform_request(:post, uri, options)
     end
 
@@ -58,7 +58,7 @@ module Moneywire
       retry_auth = options[:retry_auth].nil? ? true : options.delete(:retry_auth)
       options[:headers] ||= {}
       if [:post, :put].include?(method)
-        options[:headers].merge!('Content-Type' => 'application/json')
+        options[:headers]['Content-Type'] = 'application/json'
       end
       response = retry_authentication(method, uri, options, retry_auth)
 

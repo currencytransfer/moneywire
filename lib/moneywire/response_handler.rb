@@ -15,7 +15,7 @@ module Moneywire
     end
 
     def successful?
-      (200..206).include?(response.code)
+      (200..206).cover?(response.code)
     end
 
     private
