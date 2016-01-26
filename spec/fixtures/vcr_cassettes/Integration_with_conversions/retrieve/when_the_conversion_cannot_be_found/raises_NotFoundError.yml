@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
   response:
     status:
       code: 404
@@ -21,19 +21,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 06 Nov 2015 12:13:46 GMT
+      - Tue, 26 Jan 2016 17:14:38 GMT
       X-Amzn-Requestid:
-      - d47b94db-847f-11e5-84f7-8d88a7a490ed
+      - 47c1d112-c450-11e5-a5ae-2f767f08898d
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 9d3cc62eeee5c3d8d5e74dc52327bf12.cloudfront.net (CloudFront)
+      - 1.1 d84cd5311ccca1f37f90f1eed9f01585.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - mJg2ec4oiQGyemjfJTig7WyEAtuZcBy9fOC0pjY2GY9ro2hhTqHzSg==
+      - ut4xweA1Iz8qicJImmTuQaL3KQsAU8EVJjpEtP2_eR_7X0hSsDKvkA==
     body:
       encoding: UTF-8
       string: '{"code":"no_conversion_found","errors":[{"code":"no_conversion_found","message":"Unable
         to find a conversion with that ID"}]}'
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 12:13:46 GMT
+  recorded_at: Tue, 26 Jan 2016 17:14:38 GMT
 recorded_with: VCR 2.9.3

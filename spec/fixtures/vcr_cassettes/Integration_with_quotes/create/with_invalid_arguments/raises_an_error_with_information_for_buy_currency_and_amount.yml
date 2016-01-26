@@ -8,7 +8,7 @@ http_interactions:
       string: '{"sellCurrency":"EUR","buyCurrency":"invalid-buy","fixedSide":"sell","amount":"invalid"}'
     headers:
       X-Auth-Token:
-      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
       Content-Type:
       - application/json
   response:
@@ -23,20 +23,20 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 06 Nov 2015 11:45:20 GMT
+      - Tue, 26 Jan 2016 16:33:35 GMT
       X-Amzn-Requestid:
-      - dbbb0a93-847b-11e5-8f2c-655042592d0a
+      - 8bd25733-c44a-11e5-aa8f-a789585896d4
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 b043e5d8f891a4355b301181139be4c3.cloudfront.net (CloudFront)
+      - 1.1 761f19bc2f5721b0be0a41147e1e925f.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - fWkzl-nYKxgiSQalAnYkEKxPDnjThXEpn9jg5iy0ubU_UmxqVCEmxQ==
+      - sjRYNTLRixe0pWDsNk261KnP6Q7aNY_To2uYXac0oXPwOAd1mOBUxQ==
     body:
       encoding: UTF-8
       string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"No
         usable value for amount\nDo not know how to convert JString(invalid) into
         class scala.math.BigDecimal"}]}'
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 11:45:20 GMT
+  recorded_at: Tue, 26 Jan 2016 16:33:35 GMT
 recorded_with: VCR 2.9.3

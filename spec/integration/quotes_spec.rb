@@ -22,37 +22,28 @@ describe 'Integration with quotes', vcr: true do
         )
       end
 
-      it 'returns rate details' do
-        result = client.quotes.create(
-          sellCurrency: 'EUR',
-          buyCurrency: 'GBP',
-          fixedSide: :sell,
-          amount: 15_000
-        )
-        expect(result).to(include(*expected_response_fields))
-      end
-
-      it 'accepts conversion_date' do
+      it 'accepts deliveryDate' do
         result = client.quotes.create(
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
           fixedSide: :sell,
           amount: 15_000,
-          settlementDate: '2015-10-29'
+          deliveryDate: '2016-01-29'
         )
         expect(result).to(include(*expected_response_fields))
       end
     end
 
     context 'with invalid arguments' do
-      it 'raises BadRequestError for invalid currency pair' do
+      pending 'raises BadRequestError for invalid currency pair' do
         args = {
-          sellCurrency: 'BGN',
-          buyCurrency: 'EUR',
+          sellCurrency: 'ILS',
+          buyCurrency: 'BGN',
           fixedSide: :sell,
           amount: 15_000,
-          settlementDate: '2015-11-09'
+          deliveryDate: '2016-01-29'
         }
+
         expect { client.quotes.create(args) }.to(
           raise_error(Moneywire::BadRequestError)
         )
@@ -63,8 +54,10 @@ describe 'Integration with quotes', vcr: true do
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
           fixedSide: :sell,
-          amount: 0
+          amount: 0,
+          deliveryDate: '2016-01-29'
         }
+
         expect { client.quotes.create(args) }.to(
           raise_error(Moneywire::BadRequestError)
         )
@@ -83,6 +76,20 @@ describe 'Integration with quotes', vcr: true do
               include('code' => 'malformed_request_content', 'errors' => be_an(Array))
             )
           end
+        )
+      end
+
+      pending 'raises an error for invalid deliveryDate' do
+        args = {
+          sellCurrency: 'GBP',
+          buyCurrency: 'EUR',
+          fixedSide: :sell,
+          amount: 15_000,
+          deliveryDate: '2016-01-26'
+        }
+
+        expect { client.quotes.create(args) }.to(
+          raise_error(Moneywire::BadRequestError)
         )
       end
     end

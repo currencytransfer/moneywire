@@ -5,10 +5,10 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/conversions/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","currencyPair":"EURGBP","settlementDate":"2015-11-09","fixedSide":"sell","amount":15000,"agreesToTerms":true,"worstInterbankRate":1.0}'
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","currencyPair":"EURGBP","settlementDate":"2016-01-29","fixedSide":"sell","amount":15000,"agreesToTerms":true,"worstInterbankRate":1.0}'
     headers:
       X-Auth-Token:
-      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
       Content-Type:
       - application/json
   response:
@@ -23,20 +23,20 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 06 Nov 2015 12:08:42 GMT
+      - Wed, 27 Jan 2016 09:37:26 GMT
       X-Amzn-Requestid:
-      - 1ebdb419-847f-11e5-b322-bb2d19766627
+      - 8febf1d5-c4d9-11e5-ad9e-6550a7e6ee41
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 814d8a50ff0449894df61e2ee81d34b0.cloudfront.net (CloudFront)
+      - 1.1 1fcd1033bfe42d3b0b03eb4bfbf9624a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ts20GcXjbQy9rVlT-8LAZYa4fvjiEi1cNyk2wDI2kw7Osagc9ZYiJw==
+      - uWGzY0AsJ6CKueFBv20-_UJdhrqrgLeokNx71njtFhjcWj7KEO9AAA==
     body:
       encoding: UTF-8
       string: '{"code":"exchange_rate_moved","errors":[{"code":"exchange_rate_moved","message":"The
         exchange rate has moved against the previously quoted rate. Please review
         the rate again before continuing."}]}'
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 12:08:42 GMT
+  recorded_at: Wed, 27 Jan 2016 09:37:26 GMT
 recorded_with: VCR 2.9.3

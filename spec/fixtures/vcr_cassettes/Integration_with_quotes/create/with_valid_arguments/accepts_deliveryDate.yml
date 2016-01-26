@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-01-29"}'
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '125'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:32:25 GMT
+      X-Amzn-Requestid:
+      - 61f7297d-c44a-11e5-8dfe-8515ee75cc21
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 aac86dd0bb06b97ef178f97d0c65ee5f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 26carThsSllt27Ef-yYzEtie9vwR9RzzeYH-dtPUw9d86tNjHlKnxA==
+    body:
+      encoding: UTF-8
+      string: '{"code":"unauthorized_action","errors":[{"code":"unauthorized_action","message":"You
+        are not authorized to view this page"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:32:25 GMT
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/auth/api-login
+    body:
+      encoding: UTF-8
+      string: '{"emailAddress":"stevan-corp@currencytransfer.com","apiKey":"jD4WeeP1Ev0ap3ArKmlj8TWLIGbdSQ6ldaBKdGYsFnEsc"}'
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '61'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:32:25 GMT
+      X-Amzn-Requestid:
+      - 622bf4f0-c44a-11e5-b81a-3547a4f9a3e2
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 7922e01ab53e8f36477272573223ab35.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - RxhJiUdTChKtK3zEayIQNoWHELb_45MUzJQzQouAiCXNkmmNqnaHQQ==
+    body:
+      encoding: UTF-8
+      string: '{"authToken":"nDjeKiyYep4sA2s44vakv5KUT5yiAj5DhcRzyn8iSrybn"}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:32:26 GMT
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-01-29"}'
+    headers:
+      X-Auth-Token:
+      - nDjeKiyYep4sA2s44vakv5KUT5yiAj5DhcRzyn8iSrybn
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '445'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:32:30 GMT
+      X-Amzn-Requestid:
+      - 62772f0e-c44a-11e5-a667-d168e5fe43e6
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d89eaba973a5c1614ea9f0994f5e8a12.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 0edESYX6ufBlx3XX1t5vp1jnr-KSVROHk6MGl40xrOrt6p1b1yAOxA==
+    body:
+      encoding: UTF-8
+      string: '{"sellAmount":15000.00,"buyAmount":11322.15,"commission":28.35,"transferFee":0.00,"markedUpAmount":11322.15,"sellCurrency":"EUR","buyCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","depositAmount":0.0,"depositCurrency":"EUR","interbankRate":0.75670,"clientRate":0.75481,"markedUpRate":0.75481,"quoteTime":"2016-01-26T16:32:30.196Z","settlementDate":"2016-01-28","conversionDate":"2016-01-29","deliveryDate":"2016-01-29","stale":false}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:32:30 GMT
+recorded_with: VCR 2.9.3

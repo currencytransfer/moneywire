@@ -5,10 +5,10 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/quotes/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":0}'
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":0,"deliveryDate":"2016-01-29"}'
     headers:
       X-Auth-Token:
-      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
+      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
       Content-Type:
       - application/json
   response:
@@ -19,24 +19,23 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '196'
+      - '153'
       Connection:
       - keep-alive
       Date:
-      - Fri, 06 Nov 2015 11:49:24 GMT
+      - Tue, 26 Jan 2016 16:49:31 GMT
       X-Amzn-Requestid:
-      - 6d0cbb42-847c-11e5-be6a-415124939e7c
+      - c55db72b-c44c-11e5-9cc7-696975b7576d
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 50559c7d0445e9bb76ff2818ccaed8a7.cloudfront.net (CloudFront)
+      - 1.1 7082aa85e5086c1d55211b759fc5c155.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - o_1-BDVgEH5xShLd5rXb_3_zpI1rvW_AJhCXy6-Zau2AVtZ-c7UpeQ==
+      - CRpkF9sX5UQmQKIh7jy5Uhz8JewIaUV4GpReN2C5Rxf3Ph1bNFNp9g==
     body:
       encoding: UTF-8
-      string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"No
-        usable value for settlementDate\nDid not find value which can be converted
-        into java.lang.String"}]}'
+      string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"requirement
+        failed: The amount must be greater than zero"}]}'
     http_version: 
-  recorded_at: Fri, 06 Nov 2015 11:49:24 GMT
+  recorded_at: Tue, 26 Jan 2016 16:49:31 GMT
 recorded_with: VCR 2.9.3
