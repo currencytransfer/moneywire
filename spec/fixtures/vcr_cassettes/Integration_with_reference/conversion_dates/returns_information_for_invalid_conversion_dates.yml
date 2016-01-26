@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/conversion-dates?buyCurrency=USD&sellCurrency=GBP
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4995'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:15:10 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Amzn-Requestid:
+      - f8dd1aa6-c447-11e5-b8c1-ada832ed2327
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 017ee4b2e5ba6b7a7dd1443f39b6e832.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - GDLTYp7Oqce_giFDncI-MF-gA465JXfQDlFu_XiUI_1NGSAzrP6t3Q==
+    body:
+      encoding: UTF-8
+      string: '{"invalidConversionDates":{"2016-01-26":"Next available trading date
+        is 2016-01-27","2016-01-30":"No trading on Saturday","2016-01-31":"No trading
+        on Sunday","2016-02-06":"No trading on Saturday","2016-02-07":"No trading
+        on Sunday","2016-02-13":"No trading on Saturday","2016-02-14":"No trading
+        on Sunday","2016-02-15":"Public Holiday","2016-02-20":"No trading on Saturday","2016-02-21":"No
+        trading on Sunday","2016-02-27":"No trading on Saturday","2016-02-28":"No
+        trading on Sunday","2016-03-05":"No trading on Saturday","2016-03-06":"No
+        trading on Sunday","2016-03-12":"No trading on Saturday","2016-03-13":"No
+        trading on Sunday","2016-03-19":"No trading on Saturday","2016-03-20":"No
+        trading on Sunday","2016-03-25":"Public Holiday","2016-03-26":"No trading
+        on Saturday","2016-03-27":"No trading on Sunday","2016-03-28":"Public Holiday","2016-04-02":"No
+        trading on Saturday","2016-04-03":"No trading on Sunday","2016-04-09":"No
+        trading on Saturday","2016-04-10":"No trading on Sunday","2016-04-16":"No
+        trading on Saturday","2016-04-17":"No trading on Sunday","2016-04-23":"No
+        trading on Saturday","2016-04-24":"No trading on Sunday","2016-04-30":"No
+        trading on Saturday","2016-05-01":"No trading on Sunday","2016-05-02":"Public
+        Holiday","2016-05-07":"No trading on Saturday","2016-05-08":"No trading on
+        Sunday","2016-05-14":"No trading on Saturday","2016-05-15":"No trading on
+        Sunday","2016-05-21":"No trading on Saturday","2016-05-22":"No trading on
+        Sunday","2016-05-28":"No trading on Saturday","2016-05-29":"No trading on
+        Sunday","2016-05-30":"Public Holiday","2016-06-04":"No trading on Saturday","2016-06-05":"No
+        trading on Sunday","2016-06-11":"No trading on Saturday","2016-06-12":"No
+        trading on Sunday","2016-06-18":"No trading on Saturday","2016-06-19":"No
+        trading on Sunday","2016-06-25":"No trading on Saturday","2016-06-26":"No
+        trading on Sunday","2016-07-02":"No trading on Saturday","2016-07-03":"No
+        trading on Sunday","2016-07-04":"Public Holiday","2016-07-09":"No trading
+        on Saturday","2016-07-10":"No trading on Sunday","2016-07-16":"No trading
+        on Saturday","2016-07-17":"No trading on Sunday","2016-07-23":"No trading
+        on Saturday","2016-07-24":"No trading on Sunday","2016-07-30":"No trading
+        on Saturday","2016-07-31":"No trading on Sunday","2016-08-06":"No trading
+        on Saturday","2016-08-07":"No trading on Sunday","2016-08-13":"No trading
+        on Saturday","2016-08-14":"No trading on Sunday","2016-08-20":"No trading
+        on Saturday","2016-08-21":"No trading on Sunday","2016-08-27":"No trading
+        on Saturday","2016-08-28":"No trading on Sunday","2016-08-29":"Public Holiday","2016-09-03":"No
+        trading on Saturday","2016-09-04":"No trading on Sunday","2016-09-05":"Public
+        Holiday","2016-09-10":"No trading on Saturday","2016-09-11":"No trading on
+        Sunday","2016-09-17":"No trading on Saturday","2016-09-18":"No trading on
+        Sunday","2016-09-24":"No trading on Saturday","2016-09-25":"No trading on
+        Sunday","2016-10-01":"No trading on Saturday","2016-10-02":"No trading on
+        Sunday","2016-10-08":"No trading on Saturday","2016-10-09":"No trading on
+        Sunday","2016-10-10":"Public Holiday","2016-10-15":"No trading on Saturday","2016-10-16":"No
+        trading on Sunday","2016-10-22":"No trading on Saturday","2016-10-23":"No
+        trading on Sunday","2016-10-29":"No trading on Saturday","2016-10-30":"No
+        trading on Sunday","2016-11-05":"No trading on Saturday","2016-11-06":"No
+        trading on Sunday","2016-11-11":"Public Holiday","2016-11-12":"No trading
+        on Saturday","2016-11-13":"No trading on Sunday","2016-11-19":"No trading
+        on Saturday","2016-11-20":"No trading on Sunday","2016-11-24":"Public Holiday","2016-11-26":"No
+        trading on Saturday","2016-11-27":"No trading on Sunday","2016-12-03":"No
+        trading on Saturday","2016-12-04":"No trading on Sunday","2016-12-10":"No
+        trading on Saturday","2016-12-11":"No trading on Sunday","2016-12-17":"No
+        trading on Saturday","2016-12-18":"No trading on Sunday","2016-12-24":"No
+        trading on Saturday","2016-12-25":"No trading on Sunday","2016-12-26":"Public
+        Holiday","2016-12-27":"Public Holiday","2016-12-31":"No trading on Saturday","2017-01-01":"No
+        trading on Sunday","2017-01-02":"Public Holiday","2017-01-07":"No trading
+        on Saturday","2017-01-08":"No trading on Sunday","2017-01-14":"No trading
+        on Saturday","2017-01-15":"No trading on Sunday","2017-01-16":"Public Holiday","2017-01-21":"No
+        trading on Saturday","2017-01-22":"No trading on Sunday","2017-01-28":"No
+        trading on Saturday","2017-01-29":"No trading on Sunday","2017-02-04":"No
+        trading on Saturday","2017-02-05":"No trading on Sunday","2017-02-11":"No
+        trading on Saturday","2017-02-12":"No trading on Sunday","2017-02-18":"No
+        trading on Saturday","2017-02-19":"No trading on Sunday","2017-02-20":"Public
+        Holiday","2017-02-25":"No trading on Saturday","2017-02-26":"No trading on
+        Sunday"},"firstSettlementDate":"2016-01-26","firstConversionDate":"2016-01-27","firstDeliveryDate":"2016-01-27","defaultSettlementDate":"2016-01-27","defaultConversionDate":"2016-01-28","defaultDeliveryDate":"2016-01-28"}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:15:10 GMT
+recorded_with: VCR 2.9.3
