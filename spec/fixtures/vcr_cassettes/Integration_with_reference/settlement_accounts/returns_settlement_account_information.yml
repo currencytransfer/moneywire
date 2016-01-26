@@ -2,13 +2,86 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/USD
+    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/132
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Auth-Token:
-      - ma0oHFCS1aCtCoZXuSh1pmFrycW4hKqkRN9B40zSZcM9f
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '125'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 05 Jan 2016 15:29:27 GMT
+      X-Amzn-Requestid:
+      - 1b3ada81-b3c1-11e5-b8d5-1377fcf286c1
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 ffaf96eee86cf7d96c222b2f54e79b63.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Y5caKmenCnhD1fHG-bKhezS-G3SmG9p5QY58bKoPRVwSCyuyvCwtcg==
+    body:
+      encoding: UTF-8
+      string: '{"code":"unauthorized_action","errors":[{"code":"unauthorized_action","message":"You
+        are not authorized to view this page"}]}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 15:29:27 GMT
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/auth/api-login
+    body:
+      encoding: UTF-8
+      string: '{"emailAddress":"stevan-corp@currencytransfer.com","apiKey":"jD4WeeP1Ev0ap3ArKmlj8TWLIGbdSQ6ldaBKdGYsFnEsc"}'
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Jan 2016 15:29:27 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '61'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 1b81ce79-b3c1-11e5-a27e-d37413aa0f29
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 ae96545e0552212804f85fcc54706cdb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - r7lKspebu1S4-ilEasjqOZfkF_a2BeJG0k4eupMM_gGFzsOzdgSmXg==
+    body:
+      encoding: UTF-8
+      string: '{"authToken":"IDywO7eSvoU8JqLgWoGqckCwg6rITsLrXFqYKVW6a37O1"}'
+    http_version: 
+  recorded_at: Tue, 05 Jan 2016 15:29:27 GMT
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/132
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - IDywO7eSvoU8JqLgWoGqckCwg6rITsLrXFqYKVW6a37O1
   response:
     status:
       code: 200
@@ -17,26 +90,26 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '401'
+      - '404'
       Connection:
       - keep-alive
       Date:
-      - Fri, 30 Oct 2015 12:07:36 GMT
+      - Tue, 05 Jan 2016 15:29:28 GMT
       X-Amzn-Requestid:
-      - cec8b107-7efe-11e5-9f2f-294c463c4fb4
+      - 1bb42919-b3c1-11e5-bd45-059a5216d32a
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 3572de112011f1b625bb77410b0c5cca.cloudfront.net (CloudFront)
+      - 1.1 73a3bce79e63d88b3a25c9ced0be16f5.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - N5FeHo__dEFNzqPkLSf_1ijKE9f86U75CmYLFr66_WBSHlA4dhNDjQ==
+      - B4Wminq_A40kB9Xyev2NTLq4sGWd4ZaDCO9PfvB438967Suhv-8KqQ==
     body:
       encoding: UTF-8
-      string: '{"accountType":"settlement","currency":"USD","accountName":"Supercapital
-        Ltd Client Segregated USD","beneficiaryName":"Supercapital Ltd","beneficiaryAddress":"50
-        Liverpool Street, London, EC2M 7PY","beneficiaryCountry":"GB","bankName":"NEMEA
-        Bank","bankCountry":"MT","bicSwift":"NMEAMTMT","iban":"MT48 NMEA 2501 4000
-        0000 0000 0000 151","routingCode":"NMEA 25014","accountNumber":"000000000000000151"}'
+      string: '{"accountType":"settlement","currency":"GBP","accountName":"Supercapital
+        Ltd (Re Segregated Client Funds)","beneficiaryName":"Supercapital Ltd","beneficiaryAddress":"50
+        Liverpool Street, London, EC2M 7PY","beneficiaryCountry":"GB","bankName":"Coutts
+        & Co","bankCountry":"GB","bicSwift":"COUTGB22","iban":"GB44 COUT 1800 0203
+        3909 69","routingCode":"180002","accountNumber":"03390969","reference":"MW132"}'
     http_version: 
-  recorded_at: Fri, 30 Oct 2015 12:07:36 GMT
+  recorded_at: Tue, 05 Jan 2016 15:29:28 GMT
 recorded_with: VCR 2.9.3
