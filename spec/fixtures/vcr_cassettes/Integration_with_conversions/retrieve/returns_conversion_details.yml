@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/conversions/74
+    uri: https://public-demo-api.supercapital.uk/v1/conversions/147
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Auth-Token:
-      - ma0oHFCS1aCtCoZXuSh1pmFrycW4hKqkRN9B40zSZcM9f
+      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
   response:
     status:
       code: 200
@@ -17,22 +17,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '309'
+      - '527'
       Connection:
       - keep-alive
       Date:
-      - Thu, 29 Oct 2015 12:02:25 GMT
+      - Tue, 26 Jan 2016 17:14:20 GMT
       X-Amzn-Requestid:
-      - eb60641b-7e34-11e5-9e83-c59612a7c29a
+      - 3d03b912-c450-11e5-b5ec-61f1c9d786c9
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 f5d15668460b65c58e6a13f494ba5b26.cloudfront.net (CloudFront)
+      - 1.1 622b39b22357e70fa8da7e1f171019f3.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 2xyrRhFfyKpsei8qauNfNjuZg50kt41gnQCqTV7byw_L4VjNanXLdQ==
+      - mwf3tZt-Q00buGGiTFTKJfz-ASmHfKZp9vOK2egrQG9vwmSyhNCmWA==
     body:
       encoding: UTF-8
-      string: '{"id":74,"settlementDate":"2015-10-29T14:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":1.39160,"createdAt":"2015-10-29T12:01:44.000Z","clientRate":1.39508,"commission":37.50}'
+      string: '{"id":147,"settlementDate":"2016-01-28T14:00:00.000Z","conversionDate":"2016-01-29T00:00:00.000Z","deliveryDate":"2016-01-29T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":19789.05,"sellAmount":15000.00,"interbankRate":0.75610,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-01-26T17:11:57.000Z","clientRate":0.75799,"commission":49.65,"settlementReference":"MW147"}'
     http_version: 
-  recorded_at: Thu, 29 Oct 2015 12:02:25 GMT
+  recorded_at: Tue, 26 Jan 2016 17:14:20 GMT
 recorded_with: VCR 2.9.3

@@ -21,21 +21,21 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Jan 2016 15:29:27 GMT
+      - Tue, 26 Jan 2016 16:15:08 GMT
       X-Amzn-Requestid:
-      - 1b3ada81-b3c1-11e5-b8d5-1377fcf286c1
+      - f80e0b1f-c447-11e5-9d93-df8979b91c69
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 ffaf96eee86cf7d96c222b2f54e79b63.cloudfront.net (CloudFront)
+      - 1.1 462cdb6020d941cbe166e3fece73ca6d.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Y5caKmenCnhD1fHG-bKhezS-G3SmG9p5QY58bKoPRVwSCyuyvCwtcg==
+      - M-I0suOZvjeVcrrdme__D5lPMwrAqhyUMIbw1GxGd1V9p_jiQZoE9Q==
     body:
       encoding: UTF-8
       string: '{"code":"unauthorized_action","errors":[{"code":"unauthorized_action","message":"You
         are not authorized to view this page"}]}'
     http_version: 
-  recorded_at: Tue, 05 Jan 2016 15:29:27 GMT
+  recorded_at: Tue, 26 Jan 2016 16:15:09 GMT
 - request:
     method: post
     uri: https://public-demo-api.supercapital.uk/v1/auth/api-login
@@ -52,27 +52,27 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Tue, 05 Jan 2016 15:29:27 GMT
       Content-Type:
       - application/json
       Content-Length:
       - '61'
       Connection:
       - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:15:09 GMT
       X-Amzn-Requestid:
-      - 1b81ce79-b3c1-11e5-a27e-d37413aa0f29
+      - f84212ee-c447-11e5-9326-b1a8d4914fca
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 ae96545e0552212804f85fcc54706cdb.cloudfront.net (CloudFront)
+      - 1.1 528e50fb19578ca598eb8f9e2157ef09.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - r7lKspebu1S4-ilEasjqOZfkF_a2BeJG0k4eupMM_gGFzsOzdgSmXg==
+      - N_TCOt2Rcdep4MbRXbx7Nv9xgvpEObavn-C0bqSZWEGh4Ty_aKTWEg==
     body:
       encoding: UTF-8
-      string: '{"authToken":"IDywO7eSvoU8JqLgWoGqckCwg6rITsLrXFqYKVW6a37O1"}'
+      string: '{"authToken":"xWyFSDE3KE9zdgFCJPa0D0RwEatLC6XlFIWH6OyFfr0SU"}'
     http_version: 
-  recorded_at: Tue, 05 Jan 2016 15:29:27 GMT
+  recorded_at: Tue, 26 Jan 2016 16:15:09 GMT
 - request:
     method: get
     uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/132
@@ -81,7 +81,7 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - IDywO7eSvoU8JqLgWoGqckCwg6rITsLrXFqYKVW6a37O1
+      - xWyFSDE3KE9zdgFCJPa0D0RwEatLC6XlFIWH6OyFfr0SU
   response:
     status:
       code: 200
@@ -94,15 +94,15 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 05 Jan 2016 15:29:28 GMT
+      - Tue, 26 Jan 2016 16:15:09 GMT
       X-Amzn-Requestid:
-      - 1bb42919-b3c1-11e5-bd45-059a5216d32a
+      - f87fb868-c447-11e5-a114-1b3197f99bf1
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 73a3bce79e63d88b3a25c9ced0be16f5.cloudfront.net (CloudFront)
+      - 1.1 a436b6df4b0d1bd189edf722b5d2a523.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - B4Wminq_A40kB9Xyev2NTLq4sGWd4ZaDCO9PfvB438967Suhv-8KqQ==
+      - hJQnxrU9ZdIqpuKIQQvMTDVqjKEDiDTF5Z_ctpntGqXej6xoHumgtQ==
     body:
       encoding: UTF-8
       string: '{"accountType":"settlement","currency":"GBP","accountName":"Supercapital
@@ -111,5 +111,5 @@ http_interactions:
         & Co","bankCountry":"GB","bicSwift":"COUTGB22","iban":"GB44 COUT 1800 0203
         3909 69","routingCode":"180002","accountNumber":"03390969","reference":"MW132"}'
     http_version: 
-  recorded_at: Tue, 05 Jan 2016 15:29:28 GMT
+  recorded_at: Tue, 26 Jan 2016 16:15:10 GMT
 recorded_with: VCR 2.9.3

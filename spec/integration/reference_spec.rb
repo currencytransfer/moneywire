@@ -25,10 +25,13 @@ describe 'Integration with reference', vcr: true do
     let(:expected_fields) do
       %w(
         currency
-        settledFunds
+        boughtFunds
+        settledBoughtFunds
+        unsettledBoughtFunds
         deposits
         payments
         deductions
+        balance
         availableToWithdraw
         transactionLimit
       )
@@ -57,13 +60,21 @@ describe 'Integration with reference', vcr: true do
     end
   end
 
-  describe 'invalid_conversion_dates' do
+  describe 'conversion_dates' do
     it 'returns information for invalid conversion dates' do
-      expect(client.reference.invalid_conversion_dates('GBPUSD')).to(
+      result = client.reference.conversion_dates(
+        sellCurrency: 'GBP',
+        buyCurrency: 'USD'
+      )
+      expect(result).to(
         include(
-          'invalid_conversion_dates',
-          'first_conversion_date',
-          'default_conversion_date'
+          'invalidConversionDates',
+          'firstSettlementDate',
+          'firstConversionDate',
+          'firstDeliveryDate',
+          'defaultSettlementDate',
+          'defaultConversionDate',
+          'defaultDeliveryDate'
         )
       )
     end

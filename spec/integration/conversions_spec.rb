@@ -19,25 +19,25 @@ describe 'Integration with conversions', vcr: true do
   describe 'create' do
     it 'returns conversion details' do
       result = client.conversions.create(
-        buyCurrency: 'EUR',
         sellCurrency: 'GBP',
-        currencyPair: 'EURGBP',
-        settlementDate: '2015-11-09',
+        buyCurrency: 'EUR',
+        currencyPair: 'GBPEUR',
+        deliveryDate: '2016-01-29',
         fixedSide: :sell,
         amount: 15_000,
         agreesToTerms: true,
-        worstInterbankRate: 10
+        worstInterbankRate: 0
       )
       expect(result).to(include(*expected_response_fields))
     end
 
-    context 'with invalid arguments' do
+    context 'with invalid worstInterbankRate' do
       let(:response) do
         client.conversions.create(
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
           currencyPair: 'EURGBP',
-          settlementDate: '2015-11-09',
+          settlementDate: '2016-01-29',
           fixedSide: :sell,
           amount: 15_000,
           agreesToTerms: true,
@@ -51,11 +51,31 @@ describe 'Integration with conversions', vcr: true do
         )
       end
     end
+
+    context 'with invalid deliveryDate' do
+      let(:response) do
+        client.conversions.create(
+          sellCurrency: 'GBP',
+          buyCurrency: 'ILS',
+          currencyPair: 'GBPILS',
+          deliveryDate: '2016-01-01',
+          fixedSide: :sell,
+          amount: 15_000,
+          agreesToTerms: true
+        )
+      end
+
+      it 'raises BadRequestError for invalid deliveryDate' do
+        expect { response }.to(
+          raise_error(Moneywire::BadRequestError)
+        )
+      end
+    end
   end
 
   describe 'retrieve' do
     it 'returns conversion details' do
-      expect(client.conversions.retrieve(74)).to(
+      expect(client.conversions.retrieve(147)).to(
         include(*expected_response_fields)
       )
     end

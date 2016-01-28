@@ -8,7 +8,45 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - 2enDAHRRuA7vqN7Yt2ERXDUKKdO0Wdy9X6mUISeo0dqho
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '125'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:15:02 GMT
+      X-Amzn-Requestid:
+      - f43b5805-c447-11e5-aa67-e7ccc846e41b
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 83f09f54eba2e4c0bef905fd06911416.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - hOnD5RXxlCSUC2Z4OMEH0mLIa5xwLNrbHSPNCxFrC5nLzFsTpC-TDQ==
+    body:
+      encoding: UTF-8
+      string: '{"code":"unauthorized_action","errors":[{"code":"unauthorized_action","message":"You
+        are not authorized to view this page"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:15:02 GMT
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/auth/api-login
+    body:
+      encoding: UTF-8
+      string: '{"emailAddress":"stevan-corp@currencytransfer.com","apiKey":"jD4WeeP1Ev0ap3ArKmlj8TWLIGbdSQ6ldaBKdGYsFnEsc"}'
+    headers:
+      X-Auth-Token:
+      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
+      Content-Type:
+      - application/json
   response:
     status:
       code: 200
@@ -17,22 +55,57 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '455'
+      - '61'
       Connection:
       - keep-alive
       Date:
-      - Thu, 05 Nov 2015 15:55:04 GMT
+      - Tue, 26 Jan 2016 16:15:03 GMT
       X-Amzn-Requestid:
-      - 938e7ea9-83d5-11e5-8961-01990d6b77bc
+      - f482c13d-c447-11e5-a449-534b5a6968fa
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 457b75182c63eff39fe8e72b11b6c74d.cloudfront.net (CloudFront)
+      - 1.1 3ccfbae98f5816b531634c1e82e45259.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - vzW59PAHiMeWn7HX_NeQ9H5tScicenSbyemajZGb9zUxZM0ar35aMw==
+      - 6cmKZNS8TUUm_y8d0MaZqx1zJw8HNbTAj5jrjSeI1Evji6rV5d-bmQ==
     body:
       encoding: UTF-8
-      string: '{"balances":[{"currency":"USD","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":204.92,"availableToWithdraw":0.00,"transactionLimit":601815.74},{"currency":"EUR","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":291.98,"availableToWithdraw":0.00,"transactionLimit":554025.36},{"currency":"GBP","settledFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":177.12,"availableToWithdraw":0.00,"transactionLimit":394604.56}]}'
+      string: '{"authToken":"Kkm151mP18Pe4oWnnSpjRWBIPvCtkdF7gI80p9G9foNvm"}'
     http_version: 
-  recorded_at: Thu, 05 Nov 2015 15:55:04 GMT
+  recorded_at: Tue, 26 Jan 2016 16:15:03 GMT
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/reference/balances
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token:
+      - Kkm151mP18Pe4oWnnSpjRWBIPvCtkdF7gI80p9G9foNvm
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '897'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 26 Jan 2016 16:15:08 GMT
+      X-Amzn-Requestid:
+      - f4c19efc-c447-11e5-a204-4da58bbfbaf1
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 83f09f54eba2e4c0bef905fd06911416.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - M27ORfE_tsQKN_HaHlOlO53607NoOeobOuX9qLgM_LPQ3OLQjSmj9A==
+    body:
+      encoding: UTF-8
+      string: '{"balances":[{"currency":"USD","boughtFunds":564125.62,"settledBoughtFunds":0.00,"unsettledBoughtFunds":564125.62,"deposits":0.00,"payments":0.00,"deductions":204.92,"balance":-204.92,"availableToWithdraw":0.00,"transactionLimit":0.00},{"currency":"EUR","boughtFunds":686059.74,"settledBoughtFunds":0.00,"unsettledBoughtFunds":686059.74,"deposits":0.00,"payments":0.00,"deductions":291.98,"balance":-291.98,"availableToWithdraw":0.00,"transactionLimit":0.00},{"currency":"GBP","boughtFunds":87924.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":87924.00,"deposits":0.00,"payments":0.00,"deductions":177.12,"balance":-177.12,"availableToWithdraw":0.00,"transactionLimit":0.00},{"currency":"ILS","boughtFunds":57241.05,"settledBoughtFunds":0.00,"unsettledBoughtFunds":57241.05,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":0.00}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jan 2016 16:15:08 GMT
 recorded_with: VCR 2.9.3
