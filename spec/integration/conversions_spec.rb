@@ -58,14 +58,14 @@ describe 'Integration with conversions', vcr: true do
           sellCurrency: 'GBP',
           buyCurrency: 'ILS',
           currencyPair: 'GBPILS',
-          deliveryDate: '2016-01-29',
+          deliveryDate: '2016-01-01',
           fixedSide: :sell,
           amount: 15_000,
           agreesToTerms: true
         )
       end
 
-      pending 'raises BadRequestError for invalid deliveryDate' do
+      it 'raises BadRequestError for invalid deliveryDate' do
         expect { response }.to(
           raise_error(Moneywire::BadRequestError)
         )

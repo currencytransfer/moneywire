@@ -35,10 +35,24 @@ describe 'Integration with quotes', vcr: true do
     end
 
     context 'with invalid arguments' do
-      pending 'raises BadRequestError for invalid currency pair' do
+      it 'raises NotFoundError for invalid currency pair' do
         args = {
           sellCurrency: 'ILS',
           buyCurrency: 'BGN',
+          fixedSide: :sell,
+          amount: 15_000,
+          deliveryDate: '2016-01-29'
+        }
+
+        expect { client.quotes.create(args) }.to(
+          raise_error(Moneywire::NotFoundError)
+        )
+      end
+
+      it 'raises BadRequestError for not supported sell currency' do
+        args = {
+          sellCurrency: 'ILS',
+          buyCurrency: 'EUR',
           fixedSide: :sell,
           amount: 15_000,
           deliveryDate: '2016-01-29'
@@ -54,7 +68,7 @@ describe 'Integration with quotes', vcr: true do
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
           fixedSide: :sell,
-          amount: 0,
+          amount: 10,
           deliveryDate: '2016-01-29'
         }
 
@@ -79,13 +93,13 @@ describe 'Integration with quotes', vcr: true do
         )
       end
 
-      pending 'raises an error for invalid deliveryDate' do
+      it 'raises BadRequestError for invalid deliveryDate' do
         args = {
           sellCurrency: 'GBP',
-          buyCurrency: 'EUR',
+          buyCurrency: 'ILS',
           fixedSide: :sell,
           amount: 15_000,
-          deliveryDate: '2016-01-26'
+          deliveryDate: '2016-02-01'
         }
 
         expect { client.quotes.create(args) }.to(

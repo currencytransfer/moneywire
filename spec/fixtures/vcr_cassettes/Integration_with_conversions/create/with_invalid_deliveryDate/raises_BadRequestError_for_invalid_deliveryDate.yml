@@ -5,37 +5,38 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/conversions/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"GBP","buyCurrency":"ILS","currencyPair":"GBPILS","deliveryDate":"2016-01-29","fixedSide":"sell","amount":15000,"agreesToTerms":true}'
+      string: '{"sellCurrency":"GBP","buyCurrency":"ILS","currencyPair":"GBPILS","deliveryDate":"2016-01-01","fixedSide":"sell","amount":15000,"agreesToTerms":true}'
     headers:
       X-Auth-Token:
-      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
+      - 5TKKyE1P31t4l1m6yfFxlqi3O9X5ZAW5IwT7Wy1mOv1Uc
       Content-Type:
       - application/json
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 400
+      message: Bad Request
     headers:
       Content-Type:
       - application/json
       Content-Length:
-      - '157'
+      - '159'
       Connection:
       - keep-alive
       Date:
-      - Wed, 27 Jan 2016 10:45:31 GMT
+      - Thu, 28 Jan 2016 09:27:42 GMT
       X-Amzn-Requestid:
-      - 15ec35c1-c4e3-11e5-82d1-c559406a6133
+      - 61b53428-c5a1-11e5-ae0b-cde5b6761a14
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 cb2c732e7aadd34501b96b96882a8174.cloudfront.net (CloudFront)
+      - 1.1 da44a033908207250002410c047e8764.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Fc_DE5kqaZa-jg2kJne-SDlYxD2bg5Vcmdvq45cSCWFmwIttJ84gIw==
+      - Z0PW7BnH8C_4mu8hzcpBNz1qFOec2nIHMrwjkHB8h6ZmMOlYPn9oew==
     body:
       encoding: UTF-8
-      string: '{"code":"unmapped_error","errors":[{"code":"unmapped_error","message":"The
-        system was unable to handle your request at this time. Please try again later."}]}'
+      string: '{"code":"bad_request","errors":[{"code":"bad_request","message":"The
+        delivery date you provided is before the minimum delivery date for this currency
+        pair."}]}'
     http_version: 
-  recorded_at: Wed, 27 Jan 2016 10:45:31 GMT
+  recorded_at: Thu, 28 Jan 2016 09:27:42 GMT
 recorded_with: VCR 2.9.3

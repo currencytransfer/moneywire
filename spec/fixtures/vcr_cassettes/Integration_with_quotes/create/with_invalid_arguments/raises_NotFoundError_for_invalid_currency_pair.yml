@@ -8,34 +8,34 @@ http_interactions:
       string: '{"sellCurrency":"ILS","buyCurrency":"BGN","fixedSide":"sell","amount":15000,"deliveryDate":"2016-01-29"}'
     headers:
       X-Auth-Token:
-      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
+      - 5TKKyE1P31t4l1m6yfFxlqi3O9X5ZAW5IwT7Wy1mOv1Uc
       Content-Type:
       - application/json
   response:
     status:
-      code: 500
-      message: Internal Server Error
+      code: 404
+      message: Not Found
     headers:
       Content-Type:
       - application/json
       Content-Length:
-      - '157'
+      - '119'
       Connection:
       - keep-alive
       Date:
-      - Tue, 26 Jan 2016 16:37:17 GMT
+      - Thu, 28 Jan 2016 09:11:05 GMT
       X-Amzn-Requestid:
-      - 101d123d-c44b-11e5-a204-4da58bbfbaf1
+      - 0f0732b2-c59f-11e5-8c71-7f01aa7a8d6e
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 3ccfbae98f5816b531634c1e82e45259.cloudfront.net (CloudFront)
+      - 1.1 462cdb6020d941cbe166e3fece73ca6d.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - PXUAlozH5VoRdNKELs49FS1t6rVDkxxqqDLy3kZZvJYia-VLFMvJbg==
+      - QLooiqj-Vx-X5i_e6LN_YlqFMyvi4Gw3_wxvefle0eaEBTbRFtMNPw==
     body:
       encoding: UTF-8
-      string: '{"code":"unmapped_error","errors":[{"code":"unmapped_error","message":"The
-        system was unable to handle your request at this time. Please try again later."}]}'
+      string: '{"code":"not_found","errors":[{"code":"not_found","message":"Unable
+        to find conversion dates for that currency pair"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jan 2016 16:37:18 GMT
+  recorded_at: Thu, 28 Jan 2016 09:11:05 GMT
 recorded_with: VCR 2.9.3
