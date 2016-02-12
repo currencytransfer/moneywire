@@ -21,6 +21,13 @@ Style/CaseIndentation:
     - end
   IndentOneStep: true
 
+Style/SignalException:
+  EnforcedStyle: semantic
+  SupportedStyles:
+    - only_raise
+    - only_fail
+    - semantic
+
 ##################### Metrics ##################################
 
 Metrics/LineLength:
