@@ -17,7 +17,7 @@ describe 'Integration with quotes', vcr: true do
           fixedSide
           interbankRate clientRate markedUpRate
           quoteTime
-          settlementDate
+          settlementTime
           stale
         )
       end
@@ -28,7 +28,7 @@ describe 'Integration with quotes', vcr: true do
           buyCurrency: 'GBP',
           fixedSide: :sell,
           amount: 15_000,
-          deliveryDate: '2016-01-29'
+          deliveryDate: '2016-02-16'
         )
         expect(result).to(include(*expected_response_fields))
       end

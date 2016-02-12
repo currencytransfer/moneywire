@@ -12,7 +12,7 @@ describe 'Integration with conversions', vcr: true do
       sellCurrency buyCurrency currencyPair
       fixedSide sellAmount buyAmount
       interbankRate clientRate commission
-      settlementDate createdAt
+      settlementTime createdAt
     )
   end
 
@@ -22,11 +22,10 @@ describe 'Integration with conversions', vcr: true do
         sellCurrency: 'GBP',
         buyCurrency: 'EUR',
         currencyPair: 'GBPEUR',
-        deliveryDate: '2016-01-29',
+        deliveryDate: '2016-02-16',
         fixedSide: :sell,
         amount: 15_000,
-        agreesToTerms: true,
-        worstInterbankRate: 0
+        agreesToTerms: true
       )
       expect(result).to(include(*expected_response_fields))
     end
@@ -75,7 +74,7 @@ describe 'Integration with conversions', vcr: true do
 
   describe 'retrieve' do
     it 'returns conversion details' do
-      expect(client.conversions.retrieve(147)).to(
+      expect(client.conversions.retrieve(155)).to(
         include(*expected_response_fields)
       )
     end

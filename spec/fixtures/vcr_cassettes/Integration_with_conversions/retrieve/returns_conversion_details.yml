@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/conversions/147
+    uri: https://public-demo-api.supercapital.uk/v1/conversions/155
     body:
       encoding: US-ASCII
       string: ''
     headers:
       X-Auth-Token:
-      - nwZhG5IuDiLkoD7PAaca4b82bIsHfvj8o2D3MOOUvRiGW
+      - P97OoYOQlMu0ElZ4ZIWChwysgXuKokvUGLLRNKbUkGrFz
   response:
     status:
       code: 200
@@ -17,22 +17,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '527'
+      - '499'
       Connection:
       - keep-alive
       Date:
-      - Tue, 26 Jan 2016 17:14:20 GMT
+      - Fri, 12 Feb 2016 09:20:28 GMT
       X-Amzn-Requestid:
-      - 3d03b912-c450-11e5-b5ec-61f1c9d786c9
+      - db105547-d169-11e5-b775-d57480867b9d
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 622b39b22357e70fa8da7e1f171019f3.cloudfront.net (CloudFront)
+      - 1.1 e6cb0679fa61da2521709d87ab885435.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - mwf3tZt-Q00buGGiTFTKJfz-ASmHfKZp9vOK2egrQG9vwmSyhNCmWA==
+      - yccOX-r4owem8JOatDh8Ry-H4vDEpCtW9SPevV3M7d_M28IkFLIlVg==
     body:
       encoding: UTF-8
-      string: '{"id":147,"settlementDate":"2016-01-28T14:00:00.000Z","conversionDate":"2016-01-29T00:00:00.000Z","deliveryDate":"2016-01-29T00:00:00.000Z","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":19789.05,"sellAmount":15000.00,"interbankRate":0.75610,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-01-26T17:11:57.000Z","clientRate":0.75799,"commission":49.65,"settlementReference":"MW147"}'
+      string: '{"id":155,"settlementTime":"2016-02-16T14:00:00.000Z","conversionDate":"2016-02-16","deliveryDate":"2016-02-16","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":19249.20,"sellAmount":15000.00,"interbankRate":0.77730,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-02-12T09:19:08.000Z","clientRate":0.77925,"commission":48.30,"settlementReference":"MW155"}'
     http_version: 
-  recorded_at: Tue, 26 Jan 2016 17:14:20 GMT
+  recorded_at: Fri, 12 Feb 2016 09:20:28 GMT
 recorded_with: VCR 2.9.3
