@@ -1,6 +1,6 @@
 module SpecConfig
   class << self
-    attr_reader :login_id, :api_key, :token
+    attr_reader :account, :account_inactive
 
     def load
       config = {}
@@ -11,9 +11,32 @@ module SpecConfig
              'Make sure you have a valid: spec/env.yml, ' \
              'if/when you need to do real requests to the demo api.'
       end
-      @login_id = config['LOGIN_ID'] || 'login_id'
-      @api_key = config['API_KEY'] || 'api_key'
-      @token = config['TOKEN'] || 'token'
+
+      @account = init_account(config)
+
+      @account_inactive = init_account(config, '_INACTIVE')
+    end
+
+    def init_account(config, suffix = '')
+      Account.new(
+        config["LOGIN_ID#{suffix}"] || 'login_id',
+        config["API_KEY#{suffix}"] || 'api_key',
+        config["TOKEN#{suffix}"] || 'token'
+      )
+    end
+  end
+
+  class Account
+    attr_reader :login_id, :api_key, :token
+
+    def initialize(login_id, api_key, token)
+      @login_id = login_id
+      @api_key = api_key
+      @token = token
+    end
+
+    def credentials
+      [login_id, api_key, token]
     end
   end
 end

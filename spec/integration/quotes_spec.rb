@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Integration with quotes', vcr: true do
   let(:client) do
-    Moneywire::Client.new(SpecConfig.login_id, SpecConfig.api_key, SpecConfig.token)
+    Moneywire::Client.new(*SpecConfig.account.credentials)
   end
 
   describe 'create' do
@@ -77,6 +77,20 @@ describe 'Integration with quotes', vcr: true do
         )
       end
 
+      it 'raises BadRequestError for amount over maximum amount' do
+        args = {
+          sellCurrency: 'EUR',
+          buyCurrency: 'GBP',
+          fixedSide: :sell,
+          amount: 120_000,
+          deliveryDate: '2016-02-22'
+        }
+
+        expect { client.quotes.create(args) }.to(
+          raise_error(Moneywire::BadRequestError)
+        )
+      end
+
       it 'raises an error with information for buy_currency and amount' do
         args = {
           sellCurrency: 'EUR',
@@ -105,6 +119,26 @@ describe 'Integration with quotes', vcr: true do
         expect { client.quotes.create(args) }.to(
           raise_error(Moneywire::BadRequestError)
         )
+      end
+    end
+
+    context 'when the account is not activated' do
+      let(:client) do
+        Moneywire::Client.new(*SpecConfig.account_inactive.credentials)
+      end
+
+      let(:result) do
+        client.quotes.create(
+          sellCurrency: 'EUR',
+          buyCurrency: 'GBP',
+          fixedSide: :sell,
+          amount: 15_000,
+          deliveryDate: '2016-02-22'
+        )
+      end
+
+      it 'it results in error' do
+        expect { result }.to raise_error(Moneywire::AuthenticationError)
       end
     end
   end

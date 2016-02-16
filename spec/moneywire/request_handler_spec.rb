@@ -9,8 +9,8 @@ describe Moneywire::RequestHandler do
 
   let(:request_handler) do
     Moneywire::RequestHandler.new(
-      SpecConfig.login_id,
-      SpecConfig.api_key,
+      SpecConfig.account.login_id,
+      SpecConfig.account.api_key,
       'token_string'
     )
   end

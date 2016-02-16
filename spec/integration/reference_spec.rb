@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Integration with reference', vcr: true do
   let(:client) do
-    Moneywire::Client.new(SpecConfig.login_id, SpecConfig.api_key, SpecConfig.token)
+    Moneywire::Client.new(*SpecConfig.account.credentials)
   end
 
   describe 'available_currencies' do
