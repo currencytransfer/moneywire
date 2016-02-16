@@ -60,9 +60,8 @@ module Moneywire
       if [:post, :put].include?(method)
         options[:headers]['Content-Type'] = 'application/json'
       end
-      response = retry_authentication(method, uri, options, retry_auth)
-
-      ResponseHandler.new(response).parse
+      response_handler = retry_authentication(method, uri, options, retry_auth)
+      response_handler.parse
     end
 
     def auth_headers
@@ -72,19 +71,26 @@ module Moneywire
     end
 
     def retry_authentication(method, uri, options, retry_auth)
+      response_handler = nil
       2.times do
         options[:headers].merge!(auth_headers)
         response = self.class.send(method, full_uri(uri), options)
-        call_response_received_block(response)
+        response_handler = ResponseHandler.new(response)
 
-        return response if response.code != 401 || !retry_auth
+        call_response_received_block(response_handler)
+
+        return response_handler if response_handler.authenticated? || !retry_auth
         authenticate
       end
+      response_handler
     end
 
-    def call_response_received_block(response)
+    def call_response_received_block(response_handler)
       return unless response_received_block
-      response_received_block.call(response, ResponseHandler.new(response).successful?)
+      response_received_block.call(
+        response_handler.response,
+        response_handler.successful?
+      )
     end
 
     def full_uri(uri)

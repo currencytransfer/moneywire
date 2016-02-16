@@ -18,6 +18,18 @@ module Moneywire
       (200..206).cover?(response.code)
     end
 
+    def authenticated?
+      return true if response.code != 401
+
+      errors = response.parsed_response['errors']
+      if errors && errors.first &&
+          errors.first['message'] =~ /must be activated/i
+        return true
+      end
+
+      false
+    end
+
     private
 
     def map_error # rubocop:disable Metrics/CyclomaticComplexity

@@ -113,15 +113,18 @@ describe 'Integration with quotes', vcr: true do
         Moneywire::Client.new(*SpecConfig.account_inactive.credentials)
       end
 
-      it 'it results in error' do
-        result = client.quotes.create(
+      let(:result) do
+        client.quotes.create(
           sellCurrency: 'EUR',
           buyCurrency: 'GBP',
           fixedSide: :sell,
           amount: 15_000,
           deliveryDate: '2016-02-22'
         )
-        expect(result).to be 4
+      end
+
+      it 'it results in error' do
+        expect { result }.to raise_error(Moneywire::AuthenticationError)
       end
     end
   end
