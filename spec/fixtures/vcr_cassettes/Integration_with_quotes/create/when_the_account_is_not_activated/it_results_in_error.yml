@@ -8,13 +8,13 @@ http_interactions:
       string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-02-22"}'
     headers:
       X-Auth-Token:
-      - GWfAgY9j1L6nXMG80fnwrCjQh3giChzgjw7l57TFPHmxd
+      - RJHuvswLqJJ5SqKbfGy8Fdz4aBLXVD3EI9MagQVUKpEYx
       Content-Type:
       - application/json
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 403
+      message: Forbidden
     headers:
       Content-Type:
       - application/json
@@ -23,19 +23,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 16 Feb 2016 12:53:30 GMT
+      - Fri, 19 Feb 2016 13:54:13 GMT
       X-Amzn-Requestid:
-      - 476f7c49-d4ac-11e5-ad12-cbd42c814b6c
+      - 42316551-d710-11e5-9b24-8bf87a99def6
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 55ee6ea70e0823309f10db2e4b8f119f.cloudfront.net (CloudFront)
+      - 1.1 4d52cc244750d1f20eda4f3ba9e3b681.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - xL9z908Th8qL8Ur-KvqQl-QiyHBrC83aIdCJSlQQauwUw0DsaCRZAw==
+      - Iol1X1bmAKHAxsD4GHNOd4shsJd5Zq2EpbRI5pJ3ajR8vXawTLqHNw==
     body:
       encoding: UTF-8
       string: '{"code":"authentication_failed","errors":[{"code":"authentication_failed","message":"Your
         account must be activated before you can complete this action."}]}'
     http_version: 
-  recorded_at: Tue, 16 Feb 2016 12:53:30 GMT
+  recorded_at: Fri, 19 Feb 2016 13:54:13 GMT
 recorded_with: VCR 2.9.3

@@ -138,7 +138,7 @@ describe 'Integration with quotes', vcr: true do
       end
 
       it 'it results in error' do
-        expect { result }.to raise_error(Moneywire::AuthenticationError)
+        expect { result }.to raise_error(Moneywire::ForbiddenError)
       end
     end
   end

@@ -19,29 +19,26 @@ module Moneywire
     end
 
     def authenticated?
-      return true if response.code != 401
-
-      errors = response.parsed_response['errors']
-      if errors && errors.first &&
-          errors.first['message'] =~ /must be activated/i
-        return true
-      end
-
-      false
+      response.code != 401
     end
 
     private
 
-    def map_error # rubocop:disable Metrics/CyclomaticComplexity
+    def map_error # rubocop:disable Metrics/CyclomaticComplexity, Metrics/AbcSize
       error =
         case response.code
           when 400 then BadRequestError.new('Bad request', response.parsed_response)
           when 401 then AuthenticationError.new('Invalid credentials')
-          when 403 then ForbiddenError.new('No permissions to access requested resource')
+          when 403 then ForbiddenError.new(
+            'No permissions to access requested resource',
+            response.parsed_response
+          )
           when 404 then NotFoundError.new(
             'Requested resource is not found', response.parsed_response
           )
-          when 500 then InternalApplicationError.new('Something is wrong with Moneywire server')
+          when 500 then InternalApplicationError.new(
+            'Something is wrong with Moneywire server'
+          )
         end
       error ? error : UnknownError.new('Unrecognized server response')
     end
