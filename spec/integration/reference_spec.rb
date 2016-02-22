@@ -9,7 +9,7 @@ describe 'Integration with reference', vcr: true do
     it 'returns an array with information for the available currencies' do
       expect(client.reference.available_currencies).to all include(
         'code', 'name', 'localPaymentAvailable', 'cutOffTime', 'priorityDelivery',
-        'availableBuy', 'availableSell', 'extendedAvailableBuy', 'extendedAvailableSell'
+        'availableBuy', 'availableSell'
       )
     end
   end
