@@ -38,7 +38,15 @@ describe 'Integration with reference', vcr: true do
     end
 
     it 'returns current balance information' do
-      expect(client.reference.balances['balances']).to all include(*expected_fields)
+      expect(result['balances']).to all include(*expected_fields)
+    end
+
+    context 'when requesting a specific currency' do
+      let(:result) { client.reference.balances('AUD') }
+
+      it 'returns current balance information' do
+        expect(result).to include(*expected_fields)
+      end
     end
   end
 

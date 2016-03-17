@@ -8,79 +8,6 @@ http_interactions:
       string: ''
     headers:
       X-Auth-Token:
-      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '125'
-      Connection:
-      - keep-alive
-      Date:
-      - Tue, 26 Jan 2016 16:15:08 GMT
-      X-Amzn-Requestid:
-      - f80e0b1f-c447-11e5-9d93-df8979b91c69
-      X-Cache:
-      - Error from cloudfront
-      Via:
-      - 1.1 462cdb6020d941cbe166e3fece73ca6d.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - M-I0suOZvjeVcrrdme__D5lPMwrAqhyUMIbw1GxGd1V9p_jiQZoE9Q==
-    body:
-      encoding: UTF-8
-      string: '{"code":"unauthorized_action","errors":[{"code":"unauthorized_action","message":"You
-        are not authorized to view this page"}]}'
-    http_version: 
-  recorded_at: Tue, 26 Jan 2016 16:15:09 GMT
-- request:
-    method: post
-    uri: https://public-demo-api.supercapital.uk/v1/auth/api-login
-    body:
-      encoding: UTF-8
-      string: '{"emailAddress":"stevan-corp@currencytransfer.com","apiKey":"jD4WeeP1Ev0ap3ArKmlj8TWLIGbdSQ6ldaBKdGYsFnEsc"}'
-    headers:
-      X-Auth-Token:
-      - LJ1fDZeDN9cntGz1qT2PeVbjofkNrsoHqRfmQwz7nCGwD
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '61'
-      Connection:
-      - keep-alive
-      Date:
-      - Tue, 26 Jan 2016 16:15:09 GMT
-      X-Amzn-Requestid:
-      - f84212ee-c447-11e5-9326-b1a8d4914fca
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 528e50fb19578ca598eb8f9e2157ef09.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - N_TCOt2Rcdep4MbRXbx7Nv9xgvpEObavn-C0bqSZWEGh4Ty_aKTWEg==
-    body:
-      encoding: UTF-8
-      string: '{"authToken":"xWyFSDE3KE9zdgFCJPa0D0RwEatLC6XlFIWH6OyFfr0SU"}'
-    http_version: 
-  recorded_at: Tue, 26 Jan 2016 16:15:09 GMT
-- request:
-    method: get
-    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/132
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      X-Auth-Token:
       - xWyFSDE3KE9zdgFCJPa0D0RwEatLC6XlFIWH6OyFfr0SU
   response:
     status:
@@ -110,6 +37,6 @@ http_interactions:
         Liverpool Street, London, EC2M 7PY","beneficiaryCountry":"GB","bankName":"Coutts
         & Co","bankCountry":"GB","bicSwift":"COUTGB22","iban":"GB44 COUT 1800 0203
         3909 69","routingCode":"180002","accountNumber":"03390969","reference":"MW132"}'
-    http_version: 
+    http_version:
   recorded_at: Tue, 26 Jan 2016 16:15:10 GMT
 recorded_with: VCR 2.9.3
