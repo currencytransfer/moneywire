@@ -7,8 +7,7 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      X-Auth-Token:
-      - MNJMZuPi0cHJ5fyj2ZOznkZzPI2nWsssG4lKIuqrTYIux
+      X-Auth-Token: TOKEN
   response:
     status:
       code: 200
@@ -17,21 +16,21 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '4680'
+      - '4318'
       Connection:
       - keep-alive
       Date:
-      - Mon, 22 Feb 2016 17:21:27 GMT
+      - Thu, 17 Mar 2016 12:06:25 GMT
       Access-Control-Allow-Origin:
       - "*"
       X-Amzn-Requestid:
-      - b4d314d8-d988-11e5-97e6-91838d472174
+      - ac1e2af0-ec38-11e5-ada4-0d6cb957279c
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 66ee7af4768b1b41e7f77d2e5b20df5c.cloudfront.net (CloudFront)
+      - 1.1 974c28f7c099ed222b7c7aa8bcbaf5da.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - k-5pKS7ytTTrIHqRTDCAZ1PUQP3D-hIAQgLwzk89q3Axc91emsYjYw==
+      - vOAVtxo_MlobWd6DFAAT9Aa-k3kGuydfEQnjObMIt-MWxJ2aRiK1Rg==
     body:
       encoding: UTF-8
       string: '[{"code":"AUD","name":"Australian Dollar","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
@@ -51,7 +50,7 @@ http_interactions:
         New Leu","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
         Day","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"SEK","name":"Swedish
         Krona","localPaymentAvailable":true,"cutOffTime":"16:30","priorityDelivery":"Next
-        Day","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"THB","name":"Thai
+        Day","availableBuy":true,"availableSell":true,"decimalPlaces":2},{"code":"THB","name":"Thai
         Baht","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Two
         Days","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"USD","name":"United
         States Dollar","localPaymentAvailable":true,"cutOffTime":"13:00","priorityDelivery":"Same
@@ -59,7 +58,7 @@ http_interactions:
         Dirham","localPaymentAvailable":false,"cutOffTime":"15:30","priorityDelivery":"Two
         Days","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"CHF","name":"Swiss
         Franc","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
-        Day","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"EUR","name":"European
+        Day","availableBuy":true,"availableSell":true,"decimalPlaces":2},{"code":"EUR","name":"European
         Euro","localPaymentAvailable":true,"cutOffTime":"13:00","priorityDelivery":"Same
         Day","availableBuy":true,"availableSell":true,"decimalPlaces":2},{"code":"GBP","name":"British
         Pound Sterling","localPaymentAvailable":true,"cutOffTime":"14:00","priorityDelivery":"Same
@@ -81,11 +80,7 @@ http_interactions:
         African Rand","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Next
         Day","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"SAR","name":"Saudi
         Riyal","localPaymentAvailable":false,"cutOffTime":"15:30","priorityDelivery":"Two
-        Days","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"BGN","name":"Bulgarian
-        Lev","localPaymentAvailable":false,"cutOffTime":"14:00","priorityDelivery":"Next
-        Day","availableBuy":true,"availableSell":false,"decimalPlaces":2},{"code":"BHD","name":"Bahraiani
-        Dinar","localPaymentAvailable":false,"cutOffTime":"16:30","priorityDelivery":"Two
         Days","availableBuy":true,"availableSell":false,"decimalPlaces":2}]'
     http_version: 
-  recorded_at: Mon, 22 Feb 2016 17:21:28 GMT
+  recorded_at: Thu, 17 Mar 2016 12:06:25 GMT
 recorded_with: VCR 2.9.3

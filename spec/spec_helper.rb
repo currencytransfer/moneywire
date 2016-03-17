@@ -31,4 +31,12 @@ VCR.configure do |config|
     allow_unused_http_interactions: false
   }
   config.configure_rspec_metadata!
+
+  config.ignore_request do |request|
+    request.uri.include?('auth/api-login')
+  end
+
+  config.filter_sensitive_data('TOKEN') do |interaction|
+    interaction.request.headers['X-Auth-Token'] = 'TOKEN'
+  end
 end
