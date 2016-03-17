@@ -77,20 +77,6 @@ describe 'Integration with quotes', vcr: true do
         )
       end
 
-      it 'raises BadRequestError for amount over maximum amount' do
-        args = {
-          sellCurrency: 'EUR',
-          buyCurrency: 'GBP',
-          fixedSide: :sell,
-          amount: 120_000,
-          deliveryDate: '2016-02-22'
-        }
-
-        expect { client.quotes.create(args) }.to(
-          raise_error(Moneywire::BadRequestError)
-        )
-      end
-
       it 'raises an error with information for buy_currency and amount' do
         args = {
           sellCurrency: 'EUR',

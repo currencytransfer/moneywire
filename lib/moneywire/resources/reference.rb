@@ -11,8 +11,8 @@ module Moneywire
         get('currency-pairs')
       end
 
-      def balances
-        get('balances')
+      def balances(currency = nil)
+        get("balances/#{currency}")
       end
 
       def settlement_accounts(conversion_id)
