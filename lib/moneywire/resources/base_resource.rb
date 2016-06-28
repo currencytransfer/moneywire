@@ -1,8 +1,12 @@
 module Moneywire
   module Resources
     class BaseResource
-      def initialize(request_handler)
+      attr_reader :totp_token, :acting_for
+
+      def initialize(request_handler, totp_token: nil, acting_for: nil)
         @request_handler = request_handler
+        @acting_for = acting_for
+        @totp_token = totp_token
       end
 
       class << self
@@ -38,19 +42,24 @@ module Moneywire
       attr_reader :request_handler
 
       def perform_retrieve(id)
-        get(id.to_s)
+        get(id.to_s, include_acting_for({}))
       end
 
       def perform_find(**optional)
-        get('', optional)
+        get('', include_acting_for(optional))
       end
 
       def perform_update(id, **optional)
-        post(id.to_s, optional)
+        post(id.to_s, include_acting_for(optional))
       end
 
       def perform_create(**optional)
-        post('', optional)
+        post('', include_acting_for(optional))
+      end
+
+      def include_acting_for(params)
+        params[:actingFor] = acting_for if acting_for
+        params
       end
     end
   end
