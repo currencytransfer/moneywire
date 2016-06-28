@@ -5,10 +5,9 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/conversions/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"GBP","buyCurrency":"EUR","currencyPair":"GBPEUR","deliveryDate":"2016-02-16","fixedSide":"sell","amount":15000,"agreesToTerms":true}'
+      string: '{"sellCurrency":"GBP","buyCurrency":"EUR","currencyPair":"GBPEUR","deliveryDate":"2016-06-30","fixedSide":"sell","amount":15000,"agreesToTerms":true,"actingFor":148}'
     headers:
-      X-Auth-Token:
-      - P97OoYOQlMu0ElZ4ZIWChwysgXuKokvUGLLRNKbUkGrFz
+      X-Auth-Token: TOKEN
       Content-Type:
       - application/json
   response:
@@ -19,22 +18,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '499'
+      - '526'
       Connection:
       - keep-alive
       Date:
-      - Fri, 12 Feb 2016 09:19:11 GMT
+      - Tue, 28 Jun 2016 12:59:53 GMT
       X-Amzn-Requestid:
-      - a6a9df9a-d169-11e5-9c1b-99bcfef2e51f
+      - 2f29ece5-3d30-11e6-af58-d562bf53afc8
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 c035b03e455c334ee837503784ad41c8.cloudfront.net (CloudFront)
+      - 1.1 029f15a661be82d29f31e88713b71d65.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - c8uNWwBpW9lNqwQlaKnloLZ-fXiuaFN9ZXbdTkRb9_bI7UZFJ56vYA==
+      - GkzYGjricnJnxBl9RnGQBaT2RfuYTd5AXyXMA7sqoc-3J3utyrh6Ug==
     body:
       encoding: UTF-8
-      string: '{"id":155,"settlementTime":"2016-02-16T14:00:00.000Z","conversionDate":"2016-02-16","deliveryDate":"2016-02-16","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":19249.20,"sellAmount":15000.00,"interbankRate":0.77730,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-02-12T09:19:08.000Z","clientRate":0.77925,"commission":48.30,"settlementReference":"MW155"}'
+      string: '{"id":276,"settlementTime":"2016-06-30T13:00:00.000Z","conversionDate":"2016-06-30","deliveryDate":"2016-06-30","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":18575.64,"sellAmount":15000.00,"interbankRate":0.80590,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-06-28T12:59:49.000Z","clientRate":0.80791,"commission":37.32,"commissionCurrency":"GBP","settlementReference":"276MW"}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 09:19:11 GMT
+  recorded_at: Tue, 28 Jun 2016 12:59:53 GMT
 recorded_with: VCR 2.9.3

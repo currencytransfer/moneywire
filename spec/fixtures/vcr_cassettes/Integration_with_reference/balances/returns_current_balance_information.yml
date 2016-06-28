@@ -2,13 +2,12 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/reference/balances/
+    uri: https://public-demo-api.supercapital.uk/v1/reference/balances/?actingFor=148
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      X-Auth-Token:
-      - 6AL2cAzozKYvi98RV17re7wBKMTP1PADs28v2o4AIHPik
+      X-Auth-Token: TOKEN
   response:
     status:
       code: 200
@@ -17,22 +16,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '1618'
+      - '1079'
       Connection:
       - keep-alive
       Date:
-      - Thu, 17 Mar 2016 10:59:18 GMT
+      - Tue, 28 Jun 2016 12:45:34 GMT
       X-Amzn-Requestid:
-      - 4ac63596-ec2f-11e5-b213-db79d6d313fd
+      - 33f7175c-3d2e-11e6-949c-73712cf1a4b6
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 7082aa85e5086c1d55211b759fc5c155.cloudfront.net (CloudFront)
+      - 1.1 fe87e98f55ed12d46a06c407f072a87e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - XZC3KsDix-r8FHhtIT4ZBOTobhWVCH4EoxHhb1QrEvxX0erULYNcnA==
+      - 1Kg_l0yck6dfnGrj6sVr9HAmZ1WWFgJEffQlPQZ3ePuGSOMx4ue9ug==
     body:
       encoding: UTF-8
-      string: '{"balances":[{"currency":"JPY","boughtFunds":51201997.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":51201997.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":13917721.63},{"currency":"SEK","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":1022614.01},{"currency":"USD","boughtFunds":599125.62,"settledBoughtFunds":579125.62,"unsettledBoughtFunds":20000.00,"deposits":0.00,"payments":0.00,"deductions":204.92,"balance":578920.70,"availableToWithdraw":578920.70,"transactionLimit":125024.92},{"currency":"CHF","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":121236.16},{"currency":"EUR","boughtFunds":851296.80,"settledBoughtFunds":775428.29,"unsettledBoughtFunds":75868.51,"deposits":0.00,"payments":0.00,"deductions":291.98,"balance":775136.31,"availableToWithdraw":775136.31,"transactionLimit":110410.24},{"currency":"GBP","boughtFunds":273103.75,"settledBoughtFunds":267103.75,"unsettledBoughtFunds":6000.00,"deposits":0.00,"payments":0.00,"deductions":177.12,"balance":266926.63,"availableToWithdraw":266926.63,"transactionLimit":87118.10},{"currency":"ILS","boughtFunds":433658.71,"settledBoughtFunds":433658.71,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":433658.71,"availableToWithdraw":433658.71,"transactionLimit":483366.06}]}'
+      string: '{"balances":[{"currency":"AUD","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":181166.00},{"currency":"USD","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":134130.00},{"currency":"CHF","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":131296.00},{"currency":"EUR","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":121053.65},{"currency":"GBP","boughtFunds":0.00,"settledBoughtFunds":0.00,"unsettledBoughtFunds":0.00,"deposits":0.00,"payments":0.00,"deductions":0.00,"balance":0.00,"availableToWithdraw":0.00,"transactionLimit":100000.00}]}'
     http_version: 
-  recorded_at: Thu, 17 Mar 2016 10:59:18 GMT
+  recorded_at: Tue, 28 Jun 2016 12:45:34 GMT
 recorded_with: VCR 2.9.3

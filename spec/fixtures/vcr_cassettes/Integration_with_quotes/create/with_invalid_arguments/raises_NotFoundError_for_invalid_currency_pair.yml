@@ -5,10 +5,9 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/quotes/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"ILS","buyCurrency":"BGN","fixedSide":"sell","amount":15000,"deliveryDate":"2016-01-29"}'
+      string: '{"sellCurrency":"ILS","buyCurrency":"BGN","fixedSide":"sell","amount":15000,"deliveryDate":"2016-06-30","actingFor":148}'
     headers:
-      X-Auth-Token:
-      - 5TKKyE1P31t4l1m6yfFxlqi3O9X5ZAW5IwT7Wy1mOv1Uc
+      X-Auth-Token: TOKEN
       Content-Type:
       - application/json
   response:
@@ -23,19 +22,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 28 Jan 2016 09:11:05 GMT
+      - Tue, 28 Jun 2016 12:55:46 GMT
       X-Amzn-Requestid:
-      - 0f0732b2-c59f-11e5-8c71-7f01aa7a8d6e
+      - a133c2c4-3d2f-11e6-9258-d5237ef15a82
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 462cdb6020d941cbe166e3fece73ca6d.cloudfront.net (CloudFront)
+      - 1.1 2b7e0587e76bdc8afc2d63bea659b942.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - QLooiqj-Vx-X5i_e6LN_YlqFMyvi4Gw3_wxvefle0eaEBTbRFtMNPw==
+      - ZKuWJen0f-n00WwSzbg78UBT9SURbtChRcpCFtyy01YPr4yivHhZAw==
     body:
       encoding: UTF-8
       string: '{"code":"not_found","errors":[{"code":"not_found","message":"Unable
         to find conversion dates for that currency pair"}]}'
     http_version: 
-  recorded_at: Thu, 28 Jan 2016 09:11:05 GMT
+  recorded_at: Tue, 28 Jun 2016 12:55:46 GMT
 recorded_with: VCR 2.9.3

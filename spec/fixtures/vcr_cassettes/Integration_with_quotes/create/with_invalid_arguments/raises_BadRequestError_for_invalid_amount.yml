@@ -5,10 +5,9 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/quotes/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":10,"deliveryDate":"2016-01-29"}'
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":10,"deliveryDate":"2016-06-30","actingFor":148}'
     headers:
-      X-Auth-Token:
-      - 5TKKyE1P31t4l1m6yfFxlqi3O9X5ZAW5IwT7Wy1mOv1Uc
+      X-Auth-Token: TOKEN
       Content-Type:
       - application/json
   response:
@@ -23,19 +22,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 28 Jan 2016 09:43:56 GMT
+      - Tue, 28 Jun 2016 12:56:49 GMT
       X-Amzn-Requestid:
-      - a5e976eb-c5a3-11e5-b22b-d1e4b91dd33d
+      - c6e78ef0-3d2f-11e6-814e-a5e11c7bb809
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 69ae15d1338b64299d3942a44fc1fb96.cloudfront.net (CloudFront)
+      - 1.1 7ab285f149f01a2b05c04a9ee64a602f.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - oABgnHLxffrPovAzHiqQPweRHPuNfnzXVpYRsh5vCPsCWlVSqiaCJg==
+      - XbogI4QJe1VrH59ALJyA7JtNpm5wHoThgZB_bN8v-FQ2IKTTle4qKg==
     body:
       encoding: UTF-8
       string: '{"code":"sell_amount_below_minimum","errors":[{"code":"sell_amount_below_minimum","message":"The
         minimum sell amount is the equivalent of 1000 GBP."}]}'
     http_version: 
-  recorded_at: Thu, 28 Jan 2016 09:43:56 GMT
+  recorded_at: Tue, 28 Jun 2016 12:56:49 GMT
 recorded_with: VCR 2.9.3

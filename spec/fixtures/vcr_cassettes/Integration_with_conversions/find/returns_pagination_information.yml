@@ -2,13 +2,12 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/conversions/?buyCurrency=EUR
+    uri: https://public-demo-api.supercapital.uk/v1/conversions/?actingFor=148&buyCurrency=EUR
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      X-Auth-Token:
-      - P97OoYOQlMu0ElZ4ZIWChwysgXuKokvUGLLRNKbUkGrFz
+      X-Auth-Token: TOKEN
   response:
     status:
       code: 200
@@ -17,22 +16,22 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '4802'
+      - '565'
       Connection:
       - keep-alive
       Date:
-      - Fri, 12 Feb 2016 09:20:29 GMT
+      - Tue, 28 Jun 2016 13:02:43 GMT
       X-Amzn-Requestid:
-      - dbf86bce-d169-11e5-af42-37eb8be817f9
+      - 99fd7d60-3d30-11e6-b8ae-4ff176958368
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 5d53a1d9ef3a6f7480785993c37a7ad5.cloudfront.net (CloudFront)
+      - 1.1 7922e01ab53e8f36477272573223ab35.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Zf_rQ6AOZrTz6E8gWrAonlSgFfhbNO7gXRxfV2tBHUEcLT5qkK3ZgA==
+      - ESvL57wDqf-BY822tsMk_ebtlSkQwRNsTLxXWPfzXSEmhwq0Yoykng==
     body:
       encoding: UTF-8
-      string: '{"results":44,"page":1,"conversions":[{"id":57,"settlementTime":"2015-10-14T00:00:00.000Z","conversionDate":"2015-10-09","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":1000.00,"sellAmount":1137.94,"interbankRate":1.13507,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-09T12:04:20.000Z","clientRate":1.13792,"commission":2.50,"settlementReference":"MW57"},{"id":58,"settlementTime":"2015-10-14T00:00:00.000Z","conversionDate":"2015-10-12","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11395.93,"interbankRate":1.13675,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-12T16:23:45.000Z","clientRate":1.13960,"commission":25.00,"settlementReference":"MW58"},{"id":59,"settlementTime":"2015-10-14T00:00:00.000Z","conversionDate":"2015-10-12","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11394.89,"interbankRate":1.13662,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-12T16:24:15.000Z","clientRate":1.13947,"commission":25.00,"settlementReference":"MW59"},{"id":61,"settlementTime":"2015-10-27T00:00:00.000Z","conversionDate":"2015-10-26","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11051.58,"interbankRate":1.10241,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-26T12:19:17.000Z","clientRate":1.10518,"commission":25.00,"settlementReference":"MW61"},{"id":62,"settlementTime":"2015-10-27T00:00:00.000Z","conversionDate":"2015-10-26","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11051.58,"interbankRate":1.10241,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-26T12:19:31.000Z","clientRate":1.10518,"commission":25.00,"settlementReference":"MW62"},{"id":63,"settlementTime":"2015-10-27T00:00:00.000Z","conversionDate":"2015-10-26","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.02,"interbankRate":1.10217,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-26T12:19:58.000Z","clientRate":1.10493,"commission":25.00,"settlementReference":"MW63"},{"id":64,"settlementTime":"2015-10-27T00:00:00.000Z","conversionDate":"2015-10-26","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.51,"interbankRate":1.10217,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-26T12:23:57.000Z","clientRate":1.10493,"commission":25.00,"settlementReference":"MW64"},{"id":65,"settlementTime":"2015-10-27T00:00:00.000Z","conversionDate":"2015-10-26","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"USD","currencyPair":"EURUSD","fixedSide":"buy","buyAmount":10000.00,"sellAmount":11049.51,"interbankRate":1.10217,"depositAmount":"0.00","depositCurrency":"USD","depositStatus":"","depositRequiredAt":"","createdAt":"2015-10-26T12:25:13.000Z","clientRate":1.10493,"commission":25.00,"settlementReference":"MW65"},{"id":72,"settlementTime":"2015-10-29T14:00:00.000Z","conversionDate":"2015-10-30","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":0.71849,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2015-10-29T12:00:04.000Z","clientRate":0.72029,"commission":37.50,"settlementReference":"MW72"},{"id":73,"settlementTime":"2015-10-29T14:00:00.000Z","conversionDate":"2015-10-30","deliveryDate":"","status":"trade_settled","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":20885.55,"sellAmount":15000.00,"interbankRate":0.71860,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2015-10-29T12:01:04.000Z","clientRate":0.72040,"commission":37.50,"settlementReference":"MW73"}]}'
+      string: '{"results":1,"page":1,"conversions":[{"id":276,"settlementTime":"2016-06-30T13:00:00.000Z","conversionDate":"2016-06-30","deliveryDate":"2016-06-30","status":"awaiting_funds","buyCurrency":"EUR","sellCurrency":"GBP","currencyPair":"EURGBP","fixedSide":"sell","buyAmount":18575.64,"sellAmount":15000.00,"interbankRate":0.80590,"depositAmount":"0.00","depositCurrency":"GBP","depositStatus":"not_required","depositRequiredAt":"","createdAt":"2016-06-28T12:59:49.000Z","clientRate":0.80791,"commission":37.32,"commissionCurrency":"GBP","settlementReference":"276MW"}]}'
     http_version: 
-  recorded_at: Fri, 12 Feb 2016 09:20:29 GMT
+  recorded_at: Tue, 28 Jun 2016 13:02:43 GMT
 recorded_with: VCR 2.9.3

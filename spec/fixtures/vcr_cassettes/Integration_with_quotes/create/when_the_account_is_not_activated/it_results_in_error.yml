@@ -5,10 +5,9 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/quotes/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-02-22"}'
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-02-22","actingFor":"acting_for"}'
     headers:
-      X-Auth-Token:
-      - RJHuvswLqJJ5SqKbfGy8Fdz4aBLXVD3EI9MagQVUKpEYx
+      X-Auth-Token: TOKEN
       Content-Type:
       - application/json
   response:
@@ -23,19 +22,19 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 19 Feb 2016 13:54:13 GMT
+      - Tue, 28 Jun 2016 12:58:03 GMT
       X-Amzn-Requestid:
-      - 42316551-d710-11e5-9b24-8bf87a99def6
+      - f32ae292-3d2f-11e6-bbc0-71004f1eca33
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 4d52cc244750d1f20eda4f3ba9e3b681.cloudfront.net (CloudFront)
+      - 1.1 64150aec025f89247bcddad7c210f6cb.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Iol1X1bmAKHAxsD4GHNOd4shsJd5Zq2EpbRI5pJ3ajR8vXawTLqHNw==
+      - WDu12g2MNt6kZnCJ2_envqWz9zeP3f5gsqET_sR85q8y8_7QcllGgw==
     body:
       encoding: UTF-8
       string: '{"code":"authentication_failed","errors":[{"code":"authentication_failed","message":"Your
         account must be activated before you can complete this action."}]}'
-    http_version: 
-  recorded_at: Fri, 19 Feb 2016 13:54:13 GMT
+    http_version:
+  recorded_at: Tue, 28 Jun 2016 12:58:03 GMT
 recorded_with: VCR 2.9.3

@@ -5,10 +5,9 @@ http_interactions:
     uri: https://public-demo-api.supercapital.uk/v1/conversions/
     body:
       encoding: UTF-8
-      string: '{"sellCurrency":"GBP","buyCurrency":"ILS","currencyPair":"GBPILS","deliveryDate":"2016-01-01","fixedSide":"sell","amount":15000,"agreesToTerms":true}'
+      string: '{"sellCurrency":"GBP","buyCurrency":"ILS","currencyPair":"GBPILS","deliveryDate":"2016-01-01","fixedSide":"sell","amount":15000,"agreesToTerms":true,"actingFor":148}'
     headers:
-      X-Auth-Token:
-      - 5TKKyE1P31t4l1m6yfFxlqi3O9X5ZAW5IwT7Wy1mOv1Uc
+      X-Auth-Token: TOKEN
       Content-Type:
       - application/json
   response:
@@ -23,20 +22,20 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 28 Jan 2016 09:27:42 GMT
+      - Tue, 28 Jun 2016 13:02:14 GMT
       X-Amzn-Requestid:
-      - 61b53428-c5a1-11e5-ae0b-cde5b6761a14
+      - 8842752f-3d30-11e6-9326-c93b68ea41ec
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 da44a033908207250002410c047e8764.cloudfront.net (CloudFront)
+      - 1.1 029f15a661be82d29f31e88713b71d65.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Z0PW7BnH8C_4mu8hzcpBNz1qFOec2nIHMrwjkHB8h6ZmMOlYPn9oew==
+      - Z4rwpEY-822DZP1UQkSNcMWYT6zjhA5cBr6ACnjXNlZrLGVmrV67rQ==
     body:
       encoding: UTF-8
       string: '{"code":"bad_request","errors":[{"code":"bad_request","message":"The
         delivery date you provided is before the minimum delivery date for this currency
         pair."}]}'
     http_version: 
-  recorded_at: Thu, 28 Jan 2016 09:27:42 GMT
+  recorded_at: Tue, 28 Jun 2016 13:02:14 GMT
 recorded_with: VCR 2.9.3
