@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Integration with conversions', vcr: true do
   let(:client) do
-    Moneywire::Client.new(*SpecConfig.account.credentials)
+    SpecConfig.account.client_instance
   end
 
   let(:expected_response_fields) do
@@ -22,7 +22,7 @@ describe 'Integration with conversions', vcr: true do
         sellCurrency: 'GBP',
         buyCurrency: 'EUR',
         currencyPair: 'GBPEUR',
-        deliveryDate: '2016-02-16',
+        deliveryDate: '2016-06-30',
         fixedSide: :sell,
         amount: 15_000,
         agreesToTerms: true
@@ -74,7 +74,7 @@ describe 'Integration with conversions', vcr: true do
 
   describe 'retrieve' do
     it 'returns conversion details' do
-      expect(client.conversions.retrieve(155)).to(
+      expect(client.conversions.retrieve(276)).to(
         include(*expected_response_fields)
       )
     end

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Integration with quotes', vcr: true do
   let(:client) do
-    Moneywire::Client.new(*SpecConfig.account.credentials)
+    SpecConfig.account.client_instance
   end
 
   describe 'create' do
@@ -28,7 +28,7 @@ describe 'Integration with quotes', vcr: true do
           buyCurrency: 'GBP',
           fixedSide: :sell,
           amount: 15_000,
-          deliveryDate: '2016-02-16'
+          deliveryDate: '2016-06-30'
         )
         expect(result).to(include(*expected_response_fields))
       end
@@ -41,7 +41,7 @@ describe 'Integration with quotes', vcr: true do
           buyCurrency: 'BGN',
           fixedSide: :sell,
           amount: 15_000,
-          deliveryDate: '2016-01-29'
+          deliveryDate: '2016-06-30'
         }
 
         expect { client.quotes.create(args) }.to(
@@ -55,7 +55,7 @@ describe 'Integration with quotes', vcr: true do
           buyCurrency: 'EUR',
           fixedSide: :sell,
           amount: 15_000,
-          deliveryDate: '2016-01-29'
+          deliveryDate: '2016-06-30'
         }
 
         expect { client.quotes.create(args) }.to(
@@ -69,7 +69,7 @@ describe 'Integration with quotes', vcr: true do
           buyCurrency: 'GBP',
           fixedSide: :sell,
           amount: 10,
-          deliveryDate: '2016-01-29'
+          deliveryDate: '2016-06-30'
         }
 
         expect { client.quotes.create(args) }.to(
@@ -110,7 +110,7 @@ describe 'Integration with quotes', vcr: true do
 
     context 'when the account is not activated' do
       let(:client) do
-        Moneywire::Client.new(*SpecConfig.account_inactive.credentials)
+        SpecConfig.account_inactive.client_instance
       end
 
       let(:result) do
