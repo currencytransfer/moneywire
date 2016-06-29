@@ -29,6 +29,12 @@ module Moneywire
       @conversions ||= Resources::Conversions.new(request_handler, acting_for: acting_for)
     end
 
+    def users
+      # these requests are only available to master accounts,
+      # so no acting_for is supposed to be used
+      @users ||= Resources::Users.new(request_handler)
+    end
+
     def reference
       @reference ||= Resources::Reference.new(request_handler, acting_for: acting_for)
     end
