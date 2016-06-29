@@ -71,6 +71,16 @@ describe Moneywire::Client do
     end
   end
 
+  describe '#users' do
+    it 'creates a users instance' do
+      expect(Moneywire::Resources::Users).to receive(:new).with(
+        client.request_handler
+      )
+
+      client.users
+    end
+  end
+
   describe '#reference' do
     it 'creates a resource instance passing acting_for parameter' do
       expect(Moneywire::Resources::Reference).to receive(:new).with(

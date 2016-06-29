@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Integration with reference', vcr: true do
+describe 'Reference', vcr: true do
   let(:client) do
     SpecConfig.account.client_instance
   end

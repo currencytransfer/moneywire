@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Integration with quotes', vcr: true do
+describe 'Quotes', vcr: true do
   let(:client) do
     SpecConfig.account.client_instance
   end

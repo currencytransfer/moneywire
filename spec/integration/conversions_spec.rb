@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Integration with conversions', vcr: true do
+describe 'Conversions', vcr: true do
   let(:client) do
     SpecConfig.account.client_instance
   end
