@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'Integration with reference', vcr: true do
+describe 'Reference', vcr: true do
   let(:client) do
-    Moneywire::Client.new(*SpecConfig.account.credentials)
+    SpecConfig.account.client_instance
   end
 
   describe 'available_currencies' do
@@ -79,10 +79,7 @@ describe 'Integration with reference', vcr: true do
           'invalidConversionDates',
           'firstSettlementDate',
           'firstConversionDate',
-          'firstDeliveryDate',
-          'defaultSettlementDate',
-          'defaultConversionDate',
-          'defaultDeliveryDate'
+          'firstDeliveryDate'
         )
       )
     end

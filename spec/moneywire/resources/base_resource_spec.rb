@@ -9,6 +9,7 @@ end
 describe Moneywire::Resources::BaseResource do
   let(:request_handler) { double.as_null_object }
   let(:test_resource) { TestResource.new(request_handler) }
+  let(:test_resource_acting_for) { TestResource.new(request_handler, acting_for: 1) }
 
   describe '.use_resource' do
     it 'sets the resource_name' do
@@ -56,6 +57,16 @@ describe Moneywire::Resources::BaseResource do
 
         test_resource.retrieve('some_id')
       end
+
+      context 'with acting_for set' do
+        it 'adds actingFor parameter' do
+          expect(request_handler).to(
+            receive(:get).with(%r{test/some_id}, { actingFor: 1 }, {})
+          )
+
+          test_resource_acting_for.retrieve('some_id')
+        end
+      end
     end
 
     context 'find' do
@@ -70,6 +81,20 @@ describe Moneywire::Resources::BaseResource do
 
         test_resource.find(status: 'awaiting_funds')
       end
+
+      context 'with acting_for set' do
+        it 'adds actingFor parameter' do
+          expect(request_handler).to(
+            receive(:get).with(
+              /test/,
+              { actingFor: 1, status: 'awaiting_funds' },
+              {}
+            )
+          )
+
+          test_resource_acting_for.find(status: 'awaiting_funds')
+        end
+      end
     end
 
     context 'update' do
@@ -80,6 +105,20 @@ describe Moneywire::Resources::BaseResource do
 
         test_resource.update('some_id', arg: 1, arg2: 'another')
       end
+
+      context 'with acting_for set' do
+        it 'adds actingFor parameter' do
+          expect(request_handler).to(
+            receive(:post).with(
+              %r{test/some_id},
+              { actingFor: 1, arg: 1, arg2: 'another' },
+              {}
+            )
+          )
+
+          test_resource_acting_for.update('some_id', arg: 1, arg2: 'another')
+        end
+      end
     end
 
     context 'create' do
@@ -89,6 +128,16 @@ describe Moneywire::Resources::BaseResource do
         )
 
         test_resource.create(arg: 1, arg2: 'another')
+      end
+
+      context 'with acting_for set' do
+        it 'adds actingFor parameter' do
+          expect(request_handler).to(
+            receive(:post).with('test/', { actingFor: 1, arg: 1, arg2: 'another' }, {})
+          )
+
+          test_resource_acting_for.create(arg: 1, arg2: 'another')
+        end
       end
     end
   end

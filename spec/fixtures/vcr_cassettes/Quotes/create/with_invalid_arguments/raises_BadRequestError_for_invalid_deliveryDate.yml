@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"GBP","buyCurrency":"ILS","fixedSide":"sell","amount":15000,"deliveryDate":"2016-02-01","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '159'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 12:57:08 GMT
+      X-Amzn-Requestid:
+      - d24e1aa8-3d2f-11e6-bd88-c586a63aed3f
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 7922e01ab53e8f36477272573223ab35.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - bY0rDmJcvJ7PpJdzvj5VU7V-00HAclUXclbEW2Is9Laarp_wf0U3IA==
+    body:
+      encoding: UTF-8
+      string: '{"code":"bad_request","errors":[{"code":"bad_request","message":"The
+        delivery date you provided is before the minimum delivery date for this currency
+        pair."}]}'
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 12:57:08 GMT
+recorded_with: VCR 2.9.3

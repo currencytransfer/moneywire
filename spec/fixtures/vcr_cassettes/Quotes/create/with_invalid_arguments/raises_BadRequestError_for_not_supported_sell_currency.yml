@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"ILS","buyCurrency":"EUR","fixedSide":"sell","amount":15000,"deliveryDate":"2016-06-30","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '124'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 12:56:37 GMT
+      X-Amzn-Requestid:
+      - bebfd92b-3d2f-11e6-b9c9-ebe55b2fb1d4
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 41903dc3828cdce2b3daa3c944827b92.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - zp-FTAeFBxTmKOZCnpYXXk3CWFoFfKQaRtpXYtYIgXIkabFhplKzww==
+    body:
+      encoding: UTF-8
+      string: '{"code":"currencies_not_tradeable","errors":[{"code":"currencies_not_tradeable","message":"ILS
+        is not available to sell."}]}'
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 12:56:37 GMT
+recorded_with: VCR 2.9.3

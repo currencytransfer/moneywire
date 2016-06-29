@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"EUR","buyCurrency":"invalid-buy","fixedSide":"sell","amount":"invalid","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '201'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 12:56:59 GMT
+      X-Amzn-Requestid:
+      - ccefe5e2-3d2f-11e6-920b-b5c9475b46b7
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 b56fc979704f01acc351fd21f5c956db.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - QE7_vJGAd3SWczPBVXsIXupzsNdhZURVQ_ngS1EdXtFd7UG3J1KatA==
+    body:
+      encoding: UTF-8
+      string: '{"code":"malformed_request_content","errors":[{"code":"malformed_request_content","message":"No
+        usable value for amount\nDo not know how to convert JString(invalid) into
+        class scala.math.BigDecimal"}]}'
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 12:56:59 GMT
+recorded_with: VCR 2.9.3

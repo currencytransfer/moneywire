@@ -21,22 +21,32 @@ module SpecConfig
       Account.new(
         config["LOGIN_ID#{suffix}"] || 'login_id',
         config["API_KEY#{suffix}"] || 'api_key',
-        config["TOKEN#{suffix}"] || 'token'
+        config["TOKEN#{suffix}"] || 'token',
+        config["TOTP_TOKEN#{suffix}"] || 'totp_token',
+        config["ACTING_FOR#{suffix}"] || 'acting_for'
       )
     end
   end
 
   class Account
-    attr_reader :login_id, :api_key, :token
+    attr_reader :login_id, :api_key, :token, :totp_token, :acting_for
 
-    def initialize(login_id, api_key, token)
+    def initialize(login_id, api_key, token, totp_token, acting_for)
       @login_id = login_id
       @api_key = api_key
       @token = token
+      @totp_token = totp_token
+      @acting_for = acting_for
     end
 
-    def credentials
-      [login_id, api_key, token]
+    def client_instance
+      Moneywire::Client.new(
+        login_id,
+        api_key,
+        token: token,
+        totp_token: totp_token,
+        acting_for: acting_for
+      )
     end
   end
 end

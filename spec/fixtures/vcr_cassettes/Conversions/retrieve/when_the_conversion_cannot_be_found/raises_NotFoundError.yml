@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/conversions/74000?actingFor=148
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token: TOKEN
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '125'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 13:02:33 GMT
+      X-Amzn-Requestid:
+      - 940d414c-3d30-11e6-aaa8-776c3a3af89c
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 15191055e43ba835d0fead01ae84015c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Y4Wu2T5pIer7QB12E7P2BNLMQlb_jUSvH8lBfsczdeBpsgoOJX7uIA==
+    body:
+      encoding: UTF-8
+      string: '{"code":"no_conversion_found","errors":[{"code":"no_conversion_found","message":"Unable
+        to find a conversion with that ID"}]}'
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 13:02:33 GMT
+recorded_with: VCR 2.9.3

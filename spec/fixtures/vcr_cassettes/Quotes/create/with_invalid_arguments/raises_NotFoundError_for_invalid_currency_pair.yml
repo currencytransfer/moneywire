@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"ILS","buyCurrency":"BGN","fixedSide":"sell","amount":15000,"deliveryDate":"2016-06-30","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '119'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 12:55:46 GMT
+      X-Amzn-Requestid:
+      - a133c2c4-3d2f-11e6-9258-d5237ef15a82
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 2b7e0587e76bdc8afc2d63bea659b942.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ZKuWJen0f-n00WwSzbg78UBT9SURbtChRcpCFtyy01YPr4yivHhZAw==
+    body:
+      encoding: UTF-8
+      string: '{"code":"not_found","errors":[{"code":"not_found","message":"Unable
+        to find conversion dates for that currency pair"}]}'
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 12:55:46 GMT
+recorded_with: VCR 2.9.3

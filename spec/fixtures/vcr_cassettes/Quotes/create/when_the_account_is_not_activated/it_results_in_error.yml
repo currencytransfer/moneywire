@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/quotes/
+    body:
+      encoding: UTF-8
+      string: '{"sellCurrency":"EUR","buyCurrency":"GBP","fixedSide":"sell","amount":15000,"deliveryDate":"2016-02-22","actingFor":"acting_for"}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '156'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 28 Jun 2016 12:58:03 GMT
+      X-Amzn-Requestid:
+      - f32ae292-3d2f-11e6-bbc0-71004f1eca33
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 64150aec025f89247bcddad7c210f6cb.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WDu12g2MNt6kZnCJ2_envqWz9zeP3f5gsqET_sR85q8y8_7QcllGgw==
+    body:
+      encoding: UTF-8
+      string: '{"code":"authentication_failed","errors":[{"code":"authentication_failed","message":"Your
+        account must be activated before you can complete this action."}]}'
+    http_version:
+  recorded_at: Tue, 28 Jun 2016 12:58:03 GMT
+recorded_with: VCR 2.9.3

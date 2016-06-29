@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/users/148
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token: TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jun 2016 10:37:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '370'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 82623ca1-3de5-11e6-a2ce-434433edcd79
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 0ed2a932a304d3970026849f3c0f55a1.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 3nv70UgX1StoFNQ7g0qM1CU6FZgu3zwkS3MNXPUoqFa7anOZa7NDxw==
+    body:
+      encoding: UTF-8
+      string: '{"id":148,"loginId":"kamen+demo@currencytransfer.com","active":true,"tradingEnabled":true,"isCompany":false,"firstName":"Kamen","lastName":"Hursev","mobileNumber":"+359883343266","nationality":"GB","dateOfBirth":"1970-03-04T00:00:00.000Z","street":"Some
+        str","city":"Sofia","postalCode":"1000","country":"BG","confirmationEmailAddress":"kamen+demo@currencytransfer.com"}'
+    http_version: 
+  recorded_at: Wed, 29 Jun 2016 10:37:42 GMT
+recorded_with: VCR 2.9.3

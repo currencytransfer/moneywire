@@ -4,7 +4,7 @@ module Moneywire
       use_resource 'reference'
 
       def available_currencies
-        get('available-currencies')
+        get('available-currencies', include_acting_for({}))
       end
 
       def currency_pairs
@@ -12,7 +12,7 @@ module Moneywire
       end
 
       def balances(currency = nil)
-        get("balances/#{currency}")
+        get("balances/#{currency}", include_acting_for({}))
       end
 
       def settlement_accounts(conversion_id)
