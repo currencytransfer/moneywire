@@ -64,7 +64,7 @@ describe 'Reference', vcr: true do
     end
 
     it 'returns settlement account information' do
-      expect(client.reference.settlement_accounts(132)).to include(*expected_fields)
+      expect(client.reference.settlement_accounts(276)).to include(*expected_fields)
     end
   end
 

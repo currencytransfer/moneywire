@@ -16,7 +16,7 @@ module Moneywire
       end
 
       def settlement_accounts(conversion_id)
-        get("settlement-accounts/#{conversion_id}")
+        get("settlement-accounts/#{conversion_id}", include_acting_for({}))
       end
 
       def conversion_dates(**params)
