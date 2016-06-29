@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/132
+    uri: https://public-demo-api.supercapital.uk/v1/reference/settlement-accounts/276?actingFor=148
     body:
       encoding: US-ASCII
       string: ''
@@ -20,22 +20,22 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 28 Jun 2016 12:46:13 GMT
+      - Wed, 29 Jun 2016 14:19:22 GMT
       X-Amzn-Requestid:
-      - 4c031899-3d2e-11e6-af58-d562bf53afc8
+      - 797d39f6-3e04-11e6-b1bf-e55ed7fb3cc0
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 1415e6a9d308119037d1fa89386da72a.cloudfront.net (CloudFront)
+      - 1.1 e13dc20cb35881b25fb296fb0383f55c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - XcKaOD4Rot1lhvd1aRzS3rPAP2fg8D9mkNAFolHfhBgOoyzryWyfUw==
+      - qtEFgxTX8Rtn4vilAuVOK4xEir9ooEvH4MjuMbGQQna6a0wAy019iA==
     body:
       encoding: UTF-8
       string: '{"accountType":"settlement","currency":"GBP","accountName":"Supercapital
         Ltd (Re Segregated Client Funds)","beneficiaryName":"Supercapital Ltd","beneficiaryAddress":"50
         Liverpool Street, London, EC2M 7PY","beneficiaryCountry":"GB","bankName":"Coutts
         & Co","bankCountry":"GB","bicSwift":"COUTGB22","iban":"GB44 COUT 1800 0203
-        3909 69","routingCode":"180002","accountNumber":"03390969","reference":"MW101"}'
+        3909 69","routingCode":"180002","accountNumber":"03390969","reference":"MW148"}'
     http_version: 
-  recorded_at: Tue, 28 Jun 2016 12:46:13 GMT
+  recorded_at: Wed, 29 Jun 2016 14:19:22 GMT
 recorded_with: VCR 2.9.3

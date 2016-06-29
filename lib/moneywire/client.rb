@@ -17,7 +17,7 @@ module Moneywire
         login_id, api_key, token, environment
       )
       @totp_token = totp_token
-      @acting_for = acting_for
+      @acting_for = acting_for.to_i
       request_handler.authenticate if token.nil?
     end
 
