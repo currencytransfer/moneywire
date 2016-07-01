@@ -48,16 +48,36 @@ describe Moneywire::RequestHandler do
         )
       end
 
-      after { request_handler.get('beneficiaries', name: 'john') }
-
       it 'attempts to re-authenticate' do
-        expect(Moneywire::RequestHandler).to receive(:post).with(/api-login/, anything)
+        expect(Moneywire::RequestHandler).to(
+          receive(:post).with(/api-login/, anything)
+        )
+        request_handler.get('beneficiaries', name: 'john')
       end
 
       it 'calls the original request two times' do
         expect(Moneywire::RequestHandler).to(
           receive(:get).with(/beneficiaries/, anything).exactly(2).times
         )
+        request_handler.get('beneficiaries', name: 'john')
+      end
+
+      context 'when the authentication fails twice' do
+        before do
+          allow(Moneywire::RequestHandler).to(
+            receive(:get).and_return(response_401, response_401)
+          )
+        end
+
+        it 'calls the original request two times' do
+          expect(Moneywire::RequestHandler).to(
+            receive(:get).with(/beneficiaries/, anything).exactly(2).times
+          )
+
+          expect { request_handler.get('beneficiaries', name: 'john') }.to(
+            raise_error(Moneywire::AuthenticationError)
+          )
+        end
       end
     end
 
