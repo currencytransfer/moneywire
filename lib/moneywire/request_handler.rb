@@ -45,6 +45,11 @@ module Moneywire
       perform_request(:post, uri, options)
     end
 
+    def put(uri, params = {}, options = {})
+      options[:body] = params.to_json
+      perform_request(:put, uri, options)
+    end
+
     def authenticate
       params = { emailAddress: login_id, apiKey: api_key }
       @token = post('auth/api-login', params, retry_auth: false)['authToken']

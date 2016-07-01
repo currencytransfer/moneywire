@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://public-demo-api.supercapital.uk/v1/beneficiaries/165
+    body:
+      encoding: UTF-8
+      string: '{"beneficiary":{"bankAccountHolderName":"Mark","bankCountry":"ES","currency":"EUR","bicSwift":"INGDESMM","beneficiaryEntityType":"company","beneficiaryCountry":"ES","beneficiaryCompanyName":"Demo
+        Inc.","beneficiaryAddress":"234 Demo Street Name","beneficiaryCity":"New York","beneficiaryPostcode":"NY123","beneficiaryStateOrProvince":"NY","paymentType":"both"},"authCode":"130770","authMethod":"totp","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '145'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 01 Jul 2016 10:38:27 GMT
+      X-Amzn-Requestid:
+      - f1a50291-3f77-11e6-8f18-bb72fc4a1941
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 3ccfbae98f5816b531634c1e82e45259.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ydG7TnLBNThBC0Ljd5zFheTgpQCncPW2Ggyn_0DU0Ped8Wj1iS_sCA==
+    body:
+      encoding: UTF-8
+      string: '{"code":"required_fields_missing","errors":[{"code":"required_fields_missing","message":"There
+        were some fields missing from your input: IBAN"}]}'
+    http_version: 
+  recorded_at: Fri, 01 Jul 2016 10:38:27 GMT
+recorded_with: VCR 2.9.3

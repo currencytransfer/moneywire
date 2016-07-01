@@ -122,7 +122,7 @@ describe Moneywire::RequestHandler do
 
     context 'when there is a on_response_received handler set' do
       before do
-        allow(Moneywire::RequestHandler).to receive(:get).and_return(response_200)
+        allow(Moneywire::RequestHandler).to receive(:post).and_return(response_200)
 
         request_handler.on_response_received do |response, is_successfull|
           [response, is_successfull]
@@ -133,7 +133,66 @@ describe Moneywire::RequestHandler do
         expect(request_handler.response_received_block).to(
           receive(:call).with(response_200, true)
         )
-        request_handler.get('some_resource')
+        request_handler.post('some_resource')
+      end
+    end
+  end
+
+  describe '#put' do
+    context 'with valid authentication token' do
+      it 'delegates to Moneywire::RequestHandler.post' do
+        allow(Moneywire::RequestHandler).to receive(:put) do |uri, options|
+          expect(uri).to include('beneficiaries/1')
+          expect(options).to include(
+            body: { name: 'john' }.to_json,
+            headers: {
+              'X-Auth-Token' => 'token_string',
+              'Content-Type' => 'application/json',
+              'User-Agent' => 'in_a_rest'
+            }
+          )
+          response_200
+        end
+        request_handler.put(
+          'beneficiaries/1', { name: 'john' }, headers: { 'User-Agent' => 'in_a_rest' }
+        )
+      end
+    end
+
+    context 'with invalid authentication token' do
+      before do
+        allow(Moneywire::RequestHandler).to(
+          receive(:put).with(/bene/, anything).and_return(response_401, response_200)
+        )
+      end
+
+      after { request_handler.put('beneficiary/1', name: 'john') }
+
+      it 'attempts to re-authenticate' do
+        expect(Moneywire::RequestHandler).to receive(:post).with(/api-login/, anything)
+      end
+
+      it 'calls the original request two times' do
+        expect(Moneywire::RequestHandler).to(
+          receive(:put).with(/beneficiary/, anything).exactly(2).times
+        )
+      end
+    end
+
+    context 'when there is a on_response_received handler set' do
+      before do
+        allow(Moneywire::RequestHandler).to receive(:put).and_return(response_200)
+
+        request_handler.on_response_received do |response, is_successfull|
+          [response, is_successfull]
+        end
+      end
+
+      it 'calls the handler' do
+        expect(request_handler.response_received_block).to(
+          receive(:call).with(response_200, true)
+        )
+        request_handler.put('some_resource')
       end
     end
   end

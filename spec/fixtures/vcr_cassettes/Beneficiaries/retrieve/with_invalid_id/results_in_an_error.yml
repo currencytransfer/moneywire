@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/beneficiaries/1?actingFor=148
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token: TOKEN
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '130'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 01 Jul 2016 10:39:02 GMT
+      X-Amzn-Requestid:
+      - 06f1967d-3f78-11e6-8335-090208eed236
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 029f15a661be82d29f31e88713b71d65.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - "-rUfVh6lZNGdHY4PleMFb2hdgcGMvJXVyh8DqOJ6MySdFDICDGu8Hw=="
+    body:
+      encoding: UTF-8
+      string: '{"code":"no_beneficiary_found","errors":[{"code":"no_beneficiary_found","message":"No
+        beneficiary could be found with that ID."}]}'
+    http_version: 
+  recorded_at: Fri, 01 Jul 2016 10:39:02 GMT
+recorded_with: VCR 2.9.3

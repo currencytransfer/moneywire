@@ -100,7 +100,7 @@ describe Moneywire::Resources::BaseResource do
     context 'update' do
       it 'delegates the request to the request_handler' do
         expect(request_handler).to(
-          receive(:post).with(%r{test/some_id}, { arg: 1, arg2: 'another' }, {})
+          receive(:put).with(%r{test/some_id}, { arg: 1, arg2: 'another' }, {})
         )
 
         test_resource.update('some_id', arg: 1, arg2: 'another')
@@ -109,7 +109,7 @@ describe Moneywire::Resources::BaseResource do
       context 'with acting_for set' do
         it 'adds actingFor parameter' do
           expect(request_handler).to(
-            receive(:post).with(
+            receive(:put).with(
               %r{test/some_id},
               { actingFor: 1, arg: 1, arg2: 'another' },
               {}
