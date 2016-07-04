@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://public-demo-api.supercapital.uk/v1/beneficiaries/165?actingFor=148
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Auth-Token: TOKEN
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '541'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 01 Jul 2016 10:36:00 GMT
+      X-Amzn-Requestid:
+      - 9a2ac102-3f77-11e6-a7b3-535fa79ab250
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 e13dc20cb35881b25fb296fb0383f55c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - W-GQtEVzJE1GzgP401r0HFP8dJsSVGrxwKDRYy0Tln6BI9UeU6LRZQ==
+    body:
+      encoding: UTF-8
+      string: '{"id":165,"bankAccountHolderName":"Mark","beneficiaryCountry":"ES","bankCountry":"ES","currency":"EUR","beneficiaryAddress":"234
+        Demo Street Name","bicSwift":"INGDESMM","iban":"ES9514650100981900000512","bankAddress":"CALLE
+        SEVERO OCHOA 2,28232 LAS ROZAS DE MADRID","bankName":"ING BANK NV, SUCURSAL
+        EN ESPANA (FORMERLY ING DIRECT NV, SUCURSAL EN ESPANA)","beneficiaryEntityType":"company","beneficiaryCompanyName":"Demo
+        Inc.","beneficiaryCity":"New York","beneficiaryPostcode":"NY123","beneficiaryStateOrProvince":"NY","paymentType":"both"}'
+    http_version: 
+  recorded_at: Fri, 01 Jul 2016 10:36:00 GMT
+recorded_with: VCR 2.9.3

@@ -35,6 +35,14 @@ module Moneywire
       @users ||= Resources::Users.new(request_handler)
     end
 
+    def beneficiaries
+      @beneficiaries ||= Resources::Beneficiaries.new(
+        request_handler,
+        acting_for: acting_for,
+        totp_token: totp_token
+      )
+    end
+
     def reference
       @reference ||= Resources::Reference.new(request_handler, acting_for: acting_for)
     end

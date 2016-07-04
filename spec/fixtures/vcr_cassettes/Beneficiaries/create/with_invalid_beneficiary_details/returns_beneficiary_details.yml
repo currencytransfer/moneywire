@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/beneficiaries/
+    body:
+      encoding: UTF-8
+      string: '{"beneficiary":{"bankAccountHolderName":"John Smith","bankCountry":"ES","currency":"EUR","iban":"invalid","bicSwift":"INGDESMM","beneficiaryEntityType":"company","beneficiaryCountry":"ES","beneficiaryCompanyName":"Demo
+        Inc.","beneficiaryAddress":"234 Demo Street Name","beneficiaryCity":"New York","beneficiaryPostcode":"NY123","beneficiaryStateOrProvince":"NY","paymentType":"both"},"authCode":"130770","authMethod":"totp","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '122'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 01 Jul 2016 10:38:24 GMT
+      X-Amzn-Requestid:
+      - ee514392-3f77-11e6-b2f5-079f97379470
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 761f19bc2f5721b0be0a41147e1e925f.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 00O5Ob6OUAFNS0MQTeW77cDvaay5618QVptl1dX9n-USNvXi6jhREg==
+    body:
+      encoding: UTF-8
+      string: '{"code":"beneficiary_create_failed","errors":[{"code":"beneficiary_create_failed","message":"IBAN
+        is in invalid format"}]}'
+    http_version: 
+  recorded_at: Fri, 01 Jul 2016 10:38:24 GMT
+recorded_with: VCR 2.9.3

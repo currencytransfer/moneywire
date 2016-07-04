@@ -1,3 +1,5 @@
+require 'rotp'
+
 module Moneywire
   module Resources
     class BaseResource
@@ -37,6 +39,10 @@ module Moneywire
         request_handler.post("#{self.class.resource_name}/#{uri}", params, options)
       end
 
+      def put(uri, params = {}, options = {})
+        request_handler.put("#{self.class.resource_name}/#{uri}", params, options)
+      end
+
       protected
 
       attr_reader :request_handler
@@ -50,7 +56,7 @@ module Moneywire
       end
 
       def perform_update(id, **optional)
-        post(id.to_s, include_acting_for(optional))
+        put(id.to_s, include_acting_for(optional))
       end
 
       def perform_create(**optional)
@@ -60,6 +66,11 @@ module Moneywire
       def include_acting_for(params)
         params[:actingFor] = acting_for if acting_for
         params
+      end
+
+      def totp_params
+        auth_code = ROTP::TOTP.new(totp_token).now
+        { authCode: auth_code, authMethod: 'totp' }
       end
     end
   end
