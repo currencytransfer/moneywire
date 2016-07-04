@@ -43,6 +43,10 @@ module Moneywire
       )
     end
 
+    def payments
+      @payments ||= Resources::Payments.new(request_handler, acting_for: acting_for)
+    end
+
     def reference
       @reference ||= Resources::Reference.new(request_handler, acting_for: acting_for)
     end

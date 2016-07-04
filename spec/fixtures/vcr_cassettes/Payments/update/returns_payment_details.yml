@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://public-demo-api.supercapital.uk/v1/payments/27
+    body:
+      encoding: UTF-8
+      string: '{"beneficiaryId":165,"amount":2000,"currency":"EUR","paymentDate":"2016-07-04","paymentType":"local","reason":"property","reference":"Apartment
+        123","transferFeeCurrency":"GBP","actingFor":148}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '784'
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 05 Jul 2016 08:07:08 GMT
+      X-Amzn-Requestid:
+      - 77e4f2a4-4287-11e6-8b3f-dfd2dbc85295
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6625a25624e2ac55fd07e02ce5789976.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Ec1gDtThtNkIm-hYkR6edpvliGFw38GKpT8lv4AV00YzOGUuNeuuYA==
+    body:
+      encoding: UTF-8
+      string: '{"id":27,"beneficiaryId":165,"amount":"2000","currency":"EUR","transferFeeCurrency":"GBP","paymentDate":"2016-07-04T00:00:00.000Z","paymentType":"local","reason":"property","reference":"Apartment
+        123","status":"pending_release","beneficiary":{"id":165,"bankAccountHolderName":"Mark","beneficiaryCountry":"ES","bankCountry":"ES","currency":"EUR","beneficiaryAddress":"234
+        Demo Street Name","bicSwift":"INGDESMM","iban":"ES9514650100981900000512","bankAddress":"CALLE
+        SEVERO OCHOA 2,28232 LAS ROZAS DE MADRID","bankName":"ING BANK NV, SUCURSAL
+        EN ESPANA (FORMERLY ING DIRECT NV, SUCURSAL EN ESPANA)","beneficiaryEntityType":"company","beneficiaryCompanyName":"Demo
+        Inc.","beneficiaryCity":"New York","beneficiaryPostcode":"NY123","beneficiaryStateOrProvince":"NY","paymentType":"both"}}'
+    http_version: 
+  recorded_at: Tue, 05 Jul 2016 08:07:08 GMT
+recorded_with: VCR 2.9.3

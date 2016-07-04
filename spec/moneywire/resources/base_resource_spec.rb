@@ -50,6 +50,15 @@ describe Moneywire::Resources::BaseResource do
     end
   end
 
+  describe '#put' do
+    it 'delegates to request_handler' do
+      params = { param: 1 }
+      options = { option: 1 }
+      expect(request_handler).to receive(:put).with('test/action', params, options)
+      test_resource.put('action', params, options)
+    end
+  end
+
   context 'when allowed actions are called' do
     context 'retrieve' do
       it 'delegates the request to the request_handler' do
