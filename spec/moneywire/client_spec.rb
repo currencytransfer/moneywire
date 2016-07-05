@@ -81,6 +81,29 @@ describe Moneywire::Client do
     end
   end
 
+  describe '#beneficiaries' do
+    it 'creates a Beneficiaries instance' do
+      expect(Moneywire::Resources::Beneficiaries).to receive(:new).with(
+        client.request_handler,
+        acting_for: 1,
+        totp_token: 'totp'
+      )
+
+      client.beneficiaries
+    end
+  end
+
+  describe '#payments' do
+    it 'creates a Payments instance' do
+      expect(Moneywire::Resources::Payments).to receive(:new).with(
+        client.request_handler,
+        acting_for: 1
+      )
+
+      client.payments
+    end
+  end
+
   describe '#reference' do
     it 'creates a resource instance passing acting_for parameter' do
       expect(Moneywire::Resources::Reference).to receive(:new).with(

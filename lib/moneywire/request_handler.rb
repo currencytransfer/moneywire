@@ -26,7 +26,7 @@ module Moneywire
     end
 
     # Set a callback that will be called whenever an API response is received
-    # the block will receive Httparty response object and is_successful as arguments
+    # the block will receive HTTParty response object and is_successful as arguments
     # e.g:
     #   handler.on_response_received do |response, is_successful|
     #     # log the response somewhere
@@ -48,6 +48,11 @@ module Moneywire
     def put(uri, params = {}, options = {})
       options[:body] = params.to_json
       perform_request(:put, uri, options)
+    end
+
+    def delete(uri, params = {}, options = {})
+      options[:query] = params
+      perform_request(:delete, uri, options)
     end
 
     def authenticate

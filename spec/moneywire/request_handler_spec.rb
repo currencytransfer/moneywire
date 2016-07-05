@@ -217,6 +217,25 @@ describe Moneywire::RequestHandler do
     end
   end
 
+  describe '#delete' do
+    it 'delegates to Moneywire::RequestHandler.delete' do
+      allow(Moneywire::RequestHandler).to receive(:delete).once do |uri, options|
+        expect(uri).to include('beneficiaries')
+        expect(options).to include(
+          query: { name: 'john' },
+          headers: {
+            'X-Auth-Token' => 'token_string',
+            'User-Agent' => 'in_a_rest'
+          }
+        )
+        response_200
+      end
+      request_handler.delete(
+        'beneficiaries', { name: 'john' }, headers: { 'User-Agent' => 'in_a_rest' }
+      )
+    end
+  end
+
   describe '#authenticate' do
     it 'delegates to `post`' do
       expect(request_handler).to(
