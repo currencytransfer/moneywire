@@ -104,6 +104,7 @@ module Moneywire
     end
 
     def full_uri(uri)
+      return uri if %r{^https?://} =~ uri
       Moneywire.base_uri_for(@environment) + uri
     end
   end
