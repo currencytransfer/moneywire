@@ -91,7 +91,7 @@ describe 'Beneficiaries', vcr: true do
       }
     end
 
-    it 'results in an error' do
+    it 'returns beneficiary details' do
       result = client.beneficiaries.update(165, valid_beneficiary)
       expect(result).to(include(*expected_response_fields))
     end

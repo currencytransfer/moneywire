@@ -50,5 +50,9 @@ module Moneywire
     def reference
       @reference ||= Resources::Reference.new(request_handler, acting_for: acting_for)
     end
+
+    def uploads
+      @uploads ||= Resources::Uploads.new(request_handler, acting_for: acting_for)
+    end
   end
 end

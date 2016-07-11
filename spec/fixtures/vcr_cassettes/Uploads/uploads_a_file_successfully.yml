@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://file-demo.supercapital.uk/v1/uploads/required-documents/proof-of-id?actingFor=148
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS1NdWx0aXBhcnRCb3VuZGFyeU1XDQpDb250ZW50LURpc3Bvc2l0aW9uOiBm
+        b3JtLWRhdGE7IG5hbWU9ImZpbGUiOyBmaWxlbmFtZT0idGVzdF91cGxvYWQu
+        cG5nIg0KQ29udGVudC1UeXBlOiBpbWFnZS9wbmcNColQTkcNChoKAAAADUlI
+        RFIAAACWAAAAlggGAAAAPAFx4gAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlz
+        AAALEwAACxMBAJqcGAAAAAd0SU1FB+AHCw0QJbavv3YAAAAZdEVYdENvbW1l
+        bnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAADBUlEQVR42u3dPS+zbQDH4T9J
+        gxiMBiENJoMYJEajqTFUhM1m9Al8DJH4BrX4BhKDSFgswmzyNkqkifR6Jk88
+        nrv0zR297+NIutR59byu9tezZy0dKIqiCPTYoKcAYSEshAXCQlgIC4SFsBAW
+        CAthISwQFsJCWCAshIWwQFgIC2GBsBAWwgJhISyEBcJCWAgLhIWwEBYIC2Eh
+        LBAWwkJYICyEhbBAWAgLYbVhYGCgrVurx713fn6e1dXVTE1NZWhoKOVyOVtb
+        Wzk9Pe36PDq9ro/jmh3fq3l+qoHv+lm5di/+7TS+Ou5t3NHRUdbW1tJoNLp6
+        vGbHdXpdH+f9+HjN7u90nr9uxSqK4n+3Vv722Zj343Z3d9NoNLKyspLLy8u8
+        vLzk4eEhtVoty8vLPTuPdq7vO17s3zVP36xYn70LP5uy1Xf08PBw6vV67u7u
+        Mj4+3vPz6PbYXq1Y/fo7pX27eZ+enk6SHBwc5OnpyW7ZitXaivXV3qJWq2Vj
+        Y+Pf+2dmZrK4uJhKpZL19fWUSqVvXbG+2vf87XusFL9RkuKrKd/GNLu9d3x8
+        XFQqlWJ0dPQ/YxYWForHx8euzqOT82tljlbnbud5+Il+bFjteH19La6uroq9
+        vb2iXC4XSYrt7e1vDavTcd0e3y/6dvPezPX1debm5jI5OZnb21ubd5v33hgb
+        G0uS3N/f20ELq31LS0vZ39/Pzc1N6vV6np+fc3Z2ls3NzSTJ7OysV9e3ws7/
+        s/3Ld8vgYA4PD1OtVn/sR2E319cPH5F9u2JdXFxkZ2cn8/PzGRkZSalUysTE
+        RKrVak5OTppGxR+4YmGPBcJCWAgLhIWwEBYIC2EhLBAWwkJYICyEhbBAWAgL
+        YYGwEBbCAmEhLIQFwkJYCAuEhbAQFggLYSEsEBbCQlggLISFsEBYCAthgbAQ
+        FsICYSEshAXCQlgIC4SFsBAWCAthISwQFsJCWCAshIWwEBYIC2EhLBAWwkJY
+        ICyEhbBAWAgLYYGwEBbCAmEhLIQFwkJYCAuEhbAQFgiLn+YfBUVXvT1NvvAA
+        AAAASUVORK5CYIINCi0tTXVsdGlwYXJ0Qm91bmRhcnlNVy0t
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - multipart/form-data; boundary=MultipartBoundaryMW
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.8.1
+      Date:
+      - Tue, 12 Jul 2016 15:08:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '"The document has been uploaded successfully."'
+    http_version:
+  recorded_at: Tue, 12 Jul 2016 15:08:01 GMT
+recorded_with: VCR 2.9.3

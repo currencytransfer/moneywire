@@ -6,7 +6,8 @@ module Moneywire
     include HTTParty
     debug_output $stdout
 
-    attr_reader :login_id, :api_key, :token, :token_renewed_block, :response_received_block
+    attr_reader :login_id, :api_key, :token, :token_renewed_block, :response_received_block,
+                :environment
 
     def initialize(login_id, api_key, token, environment = nil)
       @login_id = login_id
@@ -41,12 +42,12 @@ module Moneywire
     end
 
     def post(uri, params = {}, options = {})
-      options[:body] = params.to_json
+      options[:body] = params
       perform_request(:post, uri, options)
     end
 
     def put(uri, params = {}, options = {})
-      options[:body] = params.to_json
+      options[:body] = params
       perform_request(:put, uri, options)
     end
 
@@ -56,7 +57,7 @@ module Moneywire
     end
 
     def authenticate
-      params = { emailAddress: login_id, apiKey: api_key }
+      params = { emailAddress: login_id, apiKey: api_key }.to_json
       @token = post('auth/api-login', params, retry_auth: false)['authToken']
       token_renewed_block.call(token) if token_renewed_block
       token
@@ -68,7 +69,7 @@ module Moneywire
       retry_auth = options[:retry_auth].nil? ? true : options.delete(:retry_auth)
       options[:headers] ||= {}
       if [:post, :put].include?(method)
-        options[:headers]['Content-Type'] = 'application/json'
+        options[:headers]['Content-Type'] ||= 'application/json'
       end
       response_handler = retry_authentication(method, uri, options, retry_auth)
       response_handler.parse

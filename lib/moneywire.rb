@@ -7,6 +7,11 @@ module Moneywire
     demo: 'https://public-demo-api.supercapital.uk/v1/'
   }.freeze
 
+  FILE_UPLOADS = {
+    production: 'https://file.supercapital.uk/v1/',
+    demo: 'https://file-demo.supercapital.uk/v1/'
+  }.freeze
+
   class << self
     attr_reader :environment
 
@@ -16,8 +21,11 @@ module Moneywire
     end
 
     def base_uri_for(env)
-      validate_environment!(env)
-      ENVIRONMENTS[env] || ENVIRONMENTS[:demo]
+      ENVIRONMENTS[env] || validate_environment!(value)
+    end
+
+    def file_upload_uri_for(env)
+      FILE_UPLOADS[env] || validate_environment!(value)
     end
 
     private
