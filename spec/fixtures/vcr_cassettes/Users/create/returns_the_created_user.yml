@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://public-demo-api.supercapital.uk/v1/users/
+    body:
+      encoding: UTF-8
+      string: '{"email":"john@ct-test.com","firstName":"John","lastName":"Doe TEST","isCompany":true,"mobileNumber":"132456123456","country":"GB","nationality":"GB","street":"123
+        street","city":"London","postalCode":"1112","reasonForJoining":"Pay suppliers
+        monthly 10K GBP","companyNumber":"CT12341234","companyName":"CT","companyStreet":"123
+        street","companyCity":"London","companyPostalCode":"1112","companyCountry":"GB","dateOfBirth":"1980-01-01"}'
+    headers:
+      X-Auth-Token: TOKEN
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '530'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 11 Jul 2016 10:00:13 GMT
+      X-Amzn-Requestid:
+      - 4260ccd4-474e-11e6-bcce-77d56d079b5f
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d6fa2e1de8f392301c10fd5bb7b263c3.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - e4hVtyBF1HHmBOTRdhgsItTvPS6l3enPF1C7Lycsr9Htxd6E13tT2A==
+    body:
+      encoding: UTF-8
+      string: '{"id":154,"loginId":"john@ct-test.com","active":false,"tradingEnabled":false,"isCompany":true,"firstName":"John","lastName":"Doe
+        TEST","companyNumber":"CT12341234","companyName":"CT","companyStreet":"123
+        street","companyCity":"London","companyPostalCode":"1112","companyCountry":"GB","reasonForJoining":"Pay
+        suppliers monthly 10K GBP","mobileNumber":"132456123456","nationality":"GB","dateOfBirth":"1980-01-01","street":"123
+        street","city":"London","postalCode":"1112","country":"GB","confirmationEmailAddress":"john@ct-test.com"}'
+    http_version: 
+  recorded_at: Mon, 11 Jul 2016 10:00:13 GMT
+recorded_with: VCR 2.9.3

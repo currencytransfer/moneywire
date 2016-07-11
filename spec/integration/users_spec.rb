@@ -34,4 +34,33 @@ describe 'Users', vcr: true do
       expect(client.users.retrieve(148)).to(include(*expected_response_fields))
     end
   end
+
+  describe 'create' do
+    let(:request_fields) do
+      {
+        email: 'john@ct-test.com',
+        firstName: 'John',
+        lastName: 'Doe TEST',
+        isCompany: true,
+        mobileNumber: '132456123456',
+        country: 'GB',
+        nationality: 'GB',
+        street: '123 street',
+        city: 'London',
+        postalCode: '1112',
+        reasonForJoining: 'Pay suppliers monthly 10K GBP',
+        companyNumber: 'CT12341234',
+        companyName: 'CT',
+        companyStreet: '123 street',
+        companyCity: 'London',
+        companyPostalCode: '1112',
+        companyCountry: 'GB',
+        dateOfBirth: '1980-01-01'
+      }
+    end
+
+    it 'returns the created user' do
+      expect(client.users.create(request_fields)).to include(*expected_response_fields)
+    end
+  end
 end
