@@ -18,6 +18,12 @@ module Moneywire
     def environment=(value)
       validate_environment!(value)
       @environment = value.to_sym
+      self.logger = STDOUT if environment == :demo
+      @environment
+    end
+
+    def logger=(value)
+      Moneywire::RequestHandler.logger = value
     end
 
     def base_uri_for(env)

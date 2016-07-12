@@ -4,7 +4,6 @@ require 'moneywire/response_handler'
 module Moneywire
   class RequestHandler
     include HTTParty
-    debug_output $stdout
 
     attr_reader :login_id, :api_key, :token, :token_renewed_block, :response_received_block,
                 :environment
@@ -14,6 +13,10 @@ module Moneywire
       @api_key = api_key
       @token = token
       @environment = environment || Moneywire.environment
+    end
+
+    def self.logger=(value)
+      debug_output(value ? value : nil)
     end
 
     # Set a callback that will be called whenever a new token is generated

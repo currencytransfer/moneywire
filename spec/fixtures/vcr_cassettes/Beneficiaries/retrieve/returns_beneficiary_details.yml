@@ -20,15 +20,15 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 01 Jul 2016 10:36:00 GMT
+      - Tue, 12 Jul 2016 15:26:58 GMT
       X-Amzn-Requestid:
-      - 9a2ac102-3f77-11e6-a7b3-535fa79ab250
+      - 12cb85f3-4845-11e6-b99c-e1c1825610f3
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 e13dc20cb35881b25fb296fb0383f55c.cloudfront.net (CloudFront)
+      - 1.1 7239cddab402255f71ebf4fa62183992.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - W-GQtEVzJE1GzgP401r0HFP8dJsSVGrxwKDRYy0Tln6BI9UeU6LRZQ==
+      - X4bpGBP2C96pNCZfdpcFGz8WfaL0A9rls8t_FQF1jKP7mbG5tDIVZA==
     body:
       encoding: UTF-8
       string: '{"id":165,"bankAccountHolderName":"Mark","beneficiaryCountry":"ES","bankCountry":"ES","currency":"EUR","beneficiaryAddress":"234
@@ -37,5 +37,5 @@ http_interactions:
         EN ESPANA (FORMERLY ING DIRECT NV, SUCURSAL EN ESPANA)","beneficiaryEntityType":"company","beneficiaryCompanyName":"Demo
         Inc.","beneficiaryCity":"New York","beneficiaryPostcode":"NY123","beneficiaryStateOrProvince":"NY","paymentType":"both"}'
     http_version: 
-  recorded_at: Fri, 01 Jul 2016 10:36:00 GMT
+  recorded_at: Tue, 12 Jul 2016 15:26:58 GMT
 recorded_with: VCR 2.9.3
