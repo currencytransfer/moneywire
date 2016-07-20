@@ -32,7 +32,7 @@ module Moneywire
 
         "--#{DEFAULT_BOUNDARY}\r\n" \
         "Content-Disposition: form-data; name=\"file\"; filename=\"#{filename}\"\r\n" \
-        "Content-Type: #{mime_for(file_path)}\r\n" \
+        "Content-Type: #{mime_for(file_path)}\r\n\r\n" \
         "#{file_content}\r\n" \
         "--#{DEFAULT_BOUNDARY}--"
       end
