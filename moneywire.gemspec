@@ -28,5 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'byebug'
 
   spec.add_runtime_dependency 'httparty', '>= 0.13'
+  spec.add_dependency 'mime-types', '>= 1.16'
   spec.add_runtime_dependency 'rotp', '>= 3.1.0'
 end

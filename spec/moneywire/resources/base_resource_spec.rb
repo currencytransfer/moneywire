@@ -45,7 +45,7 @@ describe Moneywire::Resources::BaseResource do
     it 'delegates to request_handler' do
       params = { param: 1 }
       options = { option: 1 }
-      expect(request_handler).to receive(:post).with('test/action', params, options)
+      expect(request_handler).to receive(:post).with('test/action', params.to_json, options)
       test_resource.post('action', params, options)
     end
   end
@@ -54,7 +54,7 @@ describe Moneywire::Resources::BaseResource do
     it 'delegates to request_handler' do
       params = { param: 1 }
       options = { option: 1 }
-      expect(request_handler).to receive(:put).with('test/action', params, options)
+      expect(request_handler).to receive(:put).with('test/action', params.to_json, options)
       test_resource.put('action', params, options)
     end
   end
@@ -109,7 +109,7 @@ describe Moneywire::Resources::BaseResource do
     context 'update' do
       it 'delegates the request to the request_handler' do
         expect(request_handler).to(
-          receive(:put).with(%r{test/some_id}, { arg: 1, arg2: 'another' }, {})
+          receive(:put).with(%r{test/some_id}, { arg: 1, arg2: 'another' }.to_json, {})
         )
 
         test_resource.update('some_id', arg: 1, arg2: 'another')
@@ -120,7 +120,7 @@ describe Moneywire::Resources::BaseResource do
           expect(request_handler).to(
             receive(:put).with(
               %r{test/some_id},
-              { actingFor: 1, arg: 1, arg2: 'another' },
+              { arg: 1, arg2: 'another', actingFor: 1 }.to_json,
               {}
             )
           )
@@ -133,7 +133,7 @@ describe Moneywire::Resources::BaseResource do
     context 'create' do
       it 'delegates the request to the request_handler' do
         expect(request_handler).to(
-          receive(:post).with('test/', { arg: 1, arg2: 'another' }, {})
+          receive(:post).with('test/', { arg: 1, arg2: 'another' }.to_json, {})
         )
 
         test_resource.create(arg: 1, arg2: 'another')
@@ -142,7 +142,11 @@ describe Moneywire::Resources::BaseResource do
       context 'with acting_for set' do
         it 'adds actingFor parameter' do
           expect(request_handler).to(
-            receive(:post).with('test/', { actingFor: 1, arg: 1, arg2: 'another' }, {})
+            receive(:post).with(
+              'test/',
+              { arg: 1, arg2: 'another', actingFor: 1 }.to_json,
+              {}
+            )
           )
 
           test_resource_acting_for.create(arg: 1, arg2: 'another')

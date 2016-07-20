@@ -9,8 +9,8 @@ describe Moneywire::RequestHandler do
 
   let(:request_handler) do
     Moneywire::RequestHandler.new(
-      SpecConfig.account.login_id,
-      SpecConfig.account.api_key,
+      'ct@ct.com',
+      '1234',
       'token_string'
     )
   end
@@ -115,7 +115,7 @@ describe Moneywire::RequestHandler do
           response_200
         end
         request_handler.post(
-          'beneficiaries', { name: 'john' }, headers: { 'User-Agent' => 'in_a_rest' }
+          'beneficiaries', { name: 'john' }.to_json, headers: { 'User-Agent' => 'in_a_rest' }
         )
       end
     end
@@ -174,7 +174,7 @@ describe Moneywire::RequestHandler do
           response_200
         end
         request_handler.put(
-          'beneficiaries/1', { name: 'john' }, headers: { 'User-Agent' => 'in_a_rest' }
+          'beneficiaries/1', { name: 'john' }.to_json, headers: { 'User-Agent' => 'in_a_rest' }
         )
       end
     end
@@ -241,7 +241,7 @@ describe Moneywire::RequestHandler do
       expect(request_handler).to(
         receive(:post).with(
           'auth/api-login',
-          hash_including(:emailAddress, :apiKey),
+          { emailAddress: 'ct@ct.com', apiKey: '1234' }.to_json,
           retry_auth: false
         ).and_call_original
       )

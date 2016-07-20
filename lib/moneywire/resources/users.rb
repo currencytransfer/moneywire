@@ -3,7 +3,7 @@ module Moneywire
     class Users < BaseResource
       use_resource 'users'
 
-      allow_actions :retrieve, :find
+      allow_actions :retrieve, :find, :create
     end
   end
 end

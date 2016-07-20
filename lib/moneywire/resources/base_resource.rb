@@ -3,6 +3,7 @@ require 'rotp'
 module Moneywire
   module Resources
     class BaseResource
+      extend Forwardable
       attr_reader :totp_token, :acting_for
 
       def initialize(request_handler, totp_token: nil, acting_for: nil)
@@ -36,16 +37,17 @@ module Moneywire
       end
 
       def post(uri, params = {}, options = {})
-        request_handler.post("#{self.class.resource_name}/#{uri}", params, options)
+        request_handler.post("#{self.class.resource_name}/#{uri}", params.to_json, options)
       end
 
       def put(uri, params = {}, options = {})
-        request_handler.put("#{self.class.resource_name}/#{uri}", params, options)
+        request_handler.put("#{self.class.resource_name}/#{uri}", params.to_json, options)
       end
 
       protected
 
       attr_reader :request_handler
+      delegate [:environment] => :request_handler
 
       def perform_retrieve(id)
         get(id.to_s, include_acting_for({}))
