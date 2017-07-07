@@ -16,7 +16,7 @@ Style/MultilineOperationIndentation:
 
 # Indentation of `when`.
 Style/CaseIndentation:
-  IndentWhenRelativeTo: case
+  EnforcedStyle: case
   SupportedStyles:
     - case
     - end
