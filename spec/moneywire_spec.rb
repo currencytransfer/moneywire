@@ -13,7 +13,9 @@ describe Moneywire do
 
   describe '.base_uri_for' do
     it 'return uri for specified environment' do
-      expect(Moneywire.base_uri_for(:production)).to eq('https://public-api.supercapital.uk/v1/')
+      expect(Moneywire.base_uri_for(:production)).to(
+        eq('https://currencytransfer-api.supercapital.uk/v1/')
+      )
     end
   end
 end
